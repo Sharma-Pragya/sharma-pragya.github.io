@@ -21,6 +21,7 @@
       --chipfg:#c7d2fe;
       --card:#0f172a;
       --accent:#e5e7eb;
+      --highlight:#fff8dc; /* butter yellow */
       --maxw: 880px;
     }
     *{box-sizing:border-box}
@@ -39,13 +40,15 @@
     nav a{padding:14px 6px;white-space:nowrap;color:var(--muted)}
     nav a.active, nav a:hover{color:var(--fg)}
     section{padding:32px 0}
-    section h2{font-size:22px;margin:0 0 14px}
+    section h2{font-size:22px;margin:0 0 14px;color:var(--highlight)}
     p{margin:0 0 14px}
     ul{margin:8px 0 0 18px}
     .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:18px}
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:720px){ .grid{grid-template-columns:1fr 1fr}}
-    .pub{padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.06)}
+    .pub{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:var(--card)}
+    .pub img{width:80px;height:auto;border-radius:4px;flex-shrink:0}
+    .pub-content{flex:1}
     .pub h3{margin:0 0 8px;font-size:20px}
     .pub .meta{color:var(--muted);font-size:14px;margin-bottom:6px}
     .pub .authors{font-size:15px;margin-bottom:6px}
@@ -81,7 +84,7 @@
   <nav>
     <div class="wrap">
       <a href="#about">About</a>
-      <a href="#projects">On‑going Projects</a>
+      <a href="#projects">On-going Projects</a>
       <a href="#publications">Publications</a>
       <a href="#teaching">Teaching</a>
       <a href="#service">Service</a>
@@ -93,12 +96,12 @@
     <!-- About -->
     <section id="about">
       <h2>About / Research Vision</h2>
-      <p>I build systems that make real‑world machine learning safe, fast, and efficient. My work sits at the intersection of <strong>machine learning</strong>, <strong>distributed systems</strong>, and <strong>cyber‑physical systems</strong> (CPS) with applications in autonomous vehicles and IoT. I design toolkits and methods for <strong>distributed inference</strong>, <strong>latency/accuracy trade‑offs</strong>, and <strong>energy‑aware pipelines</strong> across device–edge–cloud.</p>
+      <p>I build systems that make real-world machine learning safe, fast, and efficient. My work sits at the intersection of <strong>machine learning</strong>, <strong>distributed systems</strong>, and <strong>cyber-physical systems</strong> (CPS) with applications in autonomous vehicles and IoT. I design toolkits and methods for <strong>distributed inference</strong>, <strong>latency/accuracy trade-offs</strong>, and <strong>energy-aware pipelines</strong> across device–edge–cloud.</p>
     </section>
 
     <!-- On-going Projects -->
     <section id="projects">
-      <h2>On‑going Projects</h2>
+      <h2>On-going Projects</h2>
       <div class="grid">
         <div class="card">
           <strong>CADET — CARLA Automated Distributed Experimentation Toolkit</strong>
@@ -118,13 +121,12 @@
         <div class="card">
           <strong>FM Zoo — Foundation Model Zoo for Heterogeneous Environments</strong>
           <p class="small">A curated collection of open-source foundation models across vision, language, and time-series domains. FM Zoo standardizes interfaces and deployment scripts for diverse FMs, enabling plug-and-play experimentation on resource-constrained devices and distributed environments.</p>
-          <!-- <div class="actions"><a class="chip">Associated Publication</a></div> -->
         </div>
       </div>
     </section>
 
-     <!-- Publications -->
-     <section id="publications">
+    <!-- Publications -->
+    <section id="publications">
       <h2>Publications</h2>
 
       <article class="pub">
@@ -167,7 +169,7 @@
       </article>
 
       <article class="pub">
-        <img src="assets/pubs/cloudcloser.png" alt="Cloud Is Closer thumbnail" />
+        <img src="assets/pubs/icccn.png" alt="Cloud Is Closer thumbnail" />
         <div class="pub-content">
           <h3>Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</h3>
           <div class="authors"><strong>P. Sharma</strong>, H. Qui, M. B. Srivastava</div>
@@ -224,16 +226,16 @@
     <section id="teaching">
       <h2>Teaching</h2>
       <ul>
-        <li>TA — Digital Logic (ECE M16/CS M51A), UCLA — Discussions on K‑maps, universal gates, seven‑segment design.</li>
-        <li>Instructor — Embedded Systems (lab sessions; UCLA) — Hands‑on PCA pipelines and timing.</li>
+        <li>TA — Digital Logic (ECE M16/CS M51A), UCLA — Discussions on K-maps, universal gates, seven-segment design.</li>
+        <li>Instructor — Embedded Systems (lab sessions; UCLA) — Hands-on PCA pipelines and timing.</li>
       </ul>
     </section>
 
     <section id="service">
       <h2>Service</h2>
       <ul>
-        <li>Artifact building & open‑source maintenance for CPS/AV toolkits (CADET, time‑series SDK).</li>
-        <li>Reviewer (student): relevant ML‑systems/CPS venues (update).</li>
+        <li>Artifact building & open-source maintenance for CPS/AV toolkits (CADET, time-series SDK).</li>
+        <li>Reviewer (student): relevant ML-systems/CPS venues (update).</li>
       </ul>
     </section>
 
@@ -245,7 +247,7 @@
     </section>
 
     <footer>
-      <div>© <span id="y"></span> Pragya Sharma. Built with plain HTML/CSS. <span class="small">Last updated: Sep 2025.</span></div>
+      <div>© <span id="y"></span> Pragya Sharma. Built with plain HTML/CSS. <span class="small">Last updated: Sep 2025.</span></div>
     </footer>
   </main>
 
@@ -260,4 +262,9 @@
       let activeIndex = 0;
       ids.forEach((sec, i) => { if (sec.offsetTop <= y) activeIndex = i; });
       links.forEach((a, i) => a.classList.toggle('active', i === activeIndex));
-    }
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>
