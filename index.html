@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pragya Sharma | Ph.D. @ UCLA</title>
+  <meta name="description" content="Pragya Sharma — Ph.D. at UCLA. Research at the intersection of machine learning, distributed systems, and cyber-physical systems (CPS/IoT/AV)." />
+  <meta name="keywords" content="Pragya Sharma, UCLA, Mani Srivastava, distributed systems, cyber-physical systems, edge AI, robotics, autonomous vehicles, CADET, Cloud-is-Closer" />
+  <meta property="og:title" content="Pragya Sharma | ML × Systems × CPS" />
+  <meta property="og:description" content="Research scientist track — distributed inference in CPS/IoT/AV. ML + systems + real-world applications." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/banner.jpg" />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{
+      --bg: #ffffff; --fg:#0f172a; --muted:#475569; --link:#0ea5e9; --chip:#eef2ff; --chipfg:#3730a3; --card:#f8fafc; --accent:#111827;
+      --maxw: 880px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b1020; --fg:#e6edf3; --muted:#a0aec0; --link:#38bdf8; --chip:#111827; --chipfg:#c7d2fe; --card:#0f172a; --accent:#e5e7eb; }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
+    header{display:flex;gap:20px;align-items:center;padding:32px 0 16px}
+    header img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid #e5e7eb}
+    h1{font-size:28px;line-height:1.1;margin:0 0 4px}
+    .subtitle{color:var(--muted)}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--chipfg);font-size:14px;border:1px solid rgba(0,0,0,0.05)}
+    nav{position:sticky;top:0;background:var(--bg);border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;z-index:50}
+    nav .wrap{display:flex;gap:16px;overflow:auto}
+    nav a{padding:12px 4px;white-space:nowrap;color:var(--muted)}
+    nav a.active, nav a:hover{color:var(--fg)}
+    section{padding:28px 0}
+    section h2{font-size:20px;margin:0 0 12px}
+    p{margin:0 0 12px}
+    ul{margin:8px 0 0 18px}
+    .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:16px}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:720px){ .grid{grid-template-columns:1fr 1fr}}
+    .pub{padding:16px;border-radius:12px;border:1px solid rgba(0,0,0,0.06)}
+    .pub h3{margin:0 0 6px;font-size:18px}
+    .pub .meta{color:var(--muted);font-size:14px;margin-bottom:6px}
+    .pub .authors{font-size:15px;margin-bottom:6px}
+    .pub .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    details{margin-top:8px}
+    code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:13px}
+    footer{padding:36px 0;color:var(--muted);font-size:14px}
+    .small{font-size:14px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header>
+      <img src="assets/headshot.jpg" alt="Pragya Sharma headshot (placeholder)" />
+      <div>
+        <h1>Pragya Sharma</h1>
+        <div class="subtitle">Ph.D. Candidate, Electrical & Computer Engineering, UCLA</div>
+        <div class="small">Advisor: Prof. Mani Srivastava · Research: <strong>ML × Distributed Systems × CPS/IoT/AV</strong></div>
+        <div class="links">
+          <a class="chip" href="mailto:pragya@ucla.edu" aria-label="Email">📧 Email</a>
+          <a class="chip" href="cv/Pragya_Sharma_CV.pdf" aria-label="CV">📄 CV</a>
+          <a class="chip" href="https://github.com/sharma-pragya" target="_blank" rel="noopener"> GitHub</a>
+          <a class="chip" href="https://scholar.google.com/citations?user=XXXX" target="_blank" rel="noopener">🎓 Google Scholar</a>
+          <a class="chip" href="https://www.linkedin.com/in/pragya-XXXX" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="chip" href="#projects">🧰 Projects</a>
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- Top Nav -->
+  <nav>
+    <div class="wrap">
+      <a href="#about">About</a>
+      <a href="#artifacts">Open‑source</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <!-- About -->
+    <section id="about">
+      <h2>About / Research Vision</h2>
+      <p>I build systems that make <em>real‑world</em> machine learning safe, fast, and efficient. My work sits at the intersection of <strong>machine learning</strong>, <strong>distributed systems</strong>, and <strong>cyber‑physical systems</strong> (CPS) with applications in autonomous vehicles and IoT. I design toolkits and methods for <strong>distributed inference</strong>, <strong>latency/accuracy trade‑offs</strong>, and <strong>energy‑aware pipelines</strong> across device–edge–cloud.</p>
+      <p>My goal is to be the <em>go‑to person</em> for <strong>distributed inference in CPS/IoT/AV</strong> — bridging ML + systems + real deployments.</p>
+    </section>
+
+    <!-- Open Source Artifacts -->
+    <section id="artifacts">
+      <h2>Open‑source artifacts</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>CADET</strong> — CARLA Automated Distributed Experimentation Toolkit.<br/>
+          <span class="small">ScenarioRunner orchestration, network delay emulation, energy profiling, and client‑server pipelines for braking and perception experiments.</span>
+          <div class="actions" style="margin-top:8px">
+            <a class="chip" href="https://github.com/sharma-pragya" target="_blank" rel="noopener">Repo</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">Docs</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">Demo</a>
+          </div>
+        </div>
+        <div class="card">
+          <strong>Time‑Series FM SDK</strong> — benchmarking & adapters for foundation models on temporal data.<br/>
+          <span class="small">Encoders/decoders/adapters, evaluation harness, and ILP‑informed placement for heterogeneous clusters.</span>
+          <div class="actions" style="margin-top:8px">
+            <a class="chip" href="#" target="_blank" rel="noopener">Repo</a>
+            <a class="chip" href="#" target="_blank" rel="noopener">Docs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <!-- Example item; duplicate and edit -->
+      <article class="pub">
+        <h3>Cloud‑is‑Closer (MILCOM 2023)</h3>
+        <div class="authors">Pragya Sharma, Mani Srivastava</div>
+        <div class="meta">IEEE Military Communications Conference (MILCOM), 2023</div>
+        <p class="small">Evaluates placing control locally vs. remotely in IoT closed‑loop systems; explores latency/accuracy trade‑offs using a simulation harness.</p>
+        <div class="actions">
+          <a class="chip" href="#" target="_blank" rel="noopener">PDF</a>
+          <a class="chip" href="#" target="_blank" rel="noopener">Slides</a>
+          <a class="chip" href="#" target="_blank" rel="noopener">Code</a>
+          <a class="chip" href="#" target="_blank" rel="noopener">BibTeX</a>
+        </div>
+        <details>
+          <summary>BibTeX</summary>
+          <pre><code>@inproceedings{sharma2023cloudiscloser,
+  title={Cloud-is-Closer: (edit with final title)},
+  author={Sharma, Pragya and Srivastava, Mani},
+  booktitle={MILCOM},
+  year={2023}
+}</code></pre>
+        </details>
+      </article>
+
+      <!-- Add more publications below -->
+      <article class="pub">
+        <h3>FMaaS Redundancy for Heterogeneous Clusters (under submission)</h3>
+        <div class="authors">Pragya Sharma, et al.</div>
+        <div class="meta">SIGMETRICS (under review)</div>
+        <p class="small">ILP‑informed deployment strategy for foundation models across heterogeneous devices, introducing redundancy as a first‑class notion.</p>
+      </article>
+
+      <article class="pub">
+        <h3>Safety‑Driven Braking Experiments in CARLA (in preparation)</h3>
+        <div class="authors">Pragya Sharma, et al.</div>
+        <div class="meta">ICRA (target)</div>
+        <p class="small">Real‑time CPS validation with client‑server perception pipelines, network delay emulation, and energy profiling.</p>
+      </article>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Distributed AV Braking</strong>
+          <p class="small">Client‑server AV pipeline with YOLO detection and asynchronous brake signaling; end‑to‑end latency and safety analysis under varying network delays.</p>
+          <div class="actions"><a class="chip" href="#" target="_blank" rel="noopener">Repo</a> <a class="chip" href="#" target="_blank" rel="noopener">2–4 slides</a></div>
+        </div>
+        <div class="card">
+          <strong>Edge/Cloud Offloading in IoT</strong>
+          <p class="small">Systematic study of offload strategies for perception‑control loops across device and cloud with energy & accuracy trade‑offs.</p>
+        </div>
+        <div class="card">
+          <strong>Distributed LLMs for First Responders</strong>
+          <p class="small">Mobile guest devices offloading to ad‑hoc edge clusters; scenarios for remote deployments with limited connectivity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching & Service -->
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul>
+        <li>TA — Digital Logic (ECE M16/CS M51A), UCLA — Discussions on K‑maps, universal gates, seven‑segment design.</li>
+        <li>Instructor — Embedded Systems (lab sessions; UCLA) — Hands‑on PCA pipelines and timing.</li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <h2>Service</h2>
+      <ul>
+        <li>Artifact building & open‑source maintenance for CPS/AV toolkits (CADET, time‑series SDK).</li>
+        <li>Reviewer (student): relevant ML‑systems/CPS venues (update).</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:pragya@ucla.edu">pragya@ucla.edu</a> · GitHub: <a href="https://github.com/sharma-pragya" target="_blank" rel="noopener">@sharma-pragya</a>
+      <br/>LinkedIn & Scholar: add your links above.</p>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Pragya Sharma. Built with plain HTML/CSS. <span class="small">Last updated: Sep 2025.</span></div>
+    </footer>
+  </main>
+
+  <script>
+    // Update year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Highlight active nav link on scroll
+    const links = Array.from(document.querySelectorAll('nav a'));
+    const ids = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const onScroll = () => {
+      const y = window.scrollY + 100;
+      let activeIndex = 0;
+      ids.forEach((sec, i) => { if (sec.offsetTop <= y) activeIndex = i; });
+      links.forEach((a, i) => a.classList.toggle('active', i === activeIndex));
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>
