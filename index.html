@@ -24,31 +24,31 @@
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
-    header{display:flex;gap:20px;align-items:center;padding:32px 0 16px}
-    header img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid #e5e7eb}
-    h1{font-size:28px;line-height:1.1;margin:0 0 4px}
-    .subtitle{color:var(--muted)}
-    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--chipfg);font-size:14px;border:1px solid rgba(0,0,0,0.05)}
+    header{display:flex;gap:24px;align-items:center;padding:32px 0 16px}
+    header img{width:180px;height:180px;border-radius:16px;object-fit:cover;border:2px solid #e5e7eb}
+    h1{font-size:32px;line-height:1.2;margin:0 0 6px}
+    .subtitle{color:var(--muted);font-size:18px}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--chip);color:var(--chipfg);font-size:15px;border:1px solid rgba(0,0,0,0.05)}
     nav{position:sticky;top:0;background:var(--bg);border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;z-index:50}
     nav .wrap{display:flex;gap:16px;overflow:auto}
-    nav a{padding:12px 4px;white-space:nowrap;color:var(--muted)}
+    nav a{padding:14px 6px;white-space:nowrap;color:var(--muted)}
     nav a.active, nav a:hover{color:var(--fg)}
-    section{padding:28px 0}
-    section h2{font-size:20px;margin:0 0 12px}
-    p{margin:0 0 12px}
+    section{padding:32px 0}
+    section h2{font-size:22px;margin:0 0 14px}
+    p{margin:0 0 14px}
     ul{margin:8px 0 0 18px}
-    .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:16px}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:18px}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:720px){ .grid{grid-template-columns:1fr 1fr}}
-    .pub{padding:16px;border-radius:12px;border:1px solid rgba(0,0,0,0.06)}
-    .pub h3{margin:0 0 6px;font-size:18px}
+    .pub{padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.06)}
+    .pub h3{margin:0 0 8px;font-size:20px}
     .pub .meta{color:var(--muted);font-size:14px;margin-bottom:6px}
     .pub .authors{font-size:15px;margin-bottom:6px}
     .pub .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
     details{margin-top:8px}
     code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:13px}
-    footer{padding:36px 0;color:var(--muted);font-size:14px}
+    footer{padding:40px 0;color:var(--muted);font-size:14px}
     .small{font-size:14px;color:var(--muted)}
   </style>
 </head>
@@ -56,7 +56,7 @@
   <div class="wrap">
     <!-- Header -->
     <header>
-      <img src="assets/headshot.jpeg" alt="Pragya Sharma headshot (placeholder)" />
+      <img src="assets/headshot.jpeg" alt="Pragya Sharma headshot" />
       <div>
         <h1>Pragya Sharma</h1>
         <div class="subtitle">Ph.D. Candidate, Electrical & Computer Engineering, UCLA</div>
@@ -119,7 +119,6 @@
     <!-- Publications -->
     <section id="publications">
       <h2>Publications</h2>
-      <!-- Example item; duplicate and edit -->
       <article class="pub">
         <h3>Cloud‑is‑Closer (MILCOM 2023)</h3>
         <div class="authors">Pragya Sharma, Mani Srivastava</div>
@@ -142,7 +141,6 @@
         </details>
       </article>
 
-      <!-- Add more publications below -->
       <article class="pub">
         <h3>FMaaS Redundancy for Heterogeneous Clusters (under submission)</h3>
         <div class="authors">Pragya Sharma, et al.</div>
