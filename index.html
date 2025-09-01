@@ -72,7 +72,7 @@
           <a class="chip" href="https://scholar.google.com/citations?user=XXXX" target="_blank" rel="noopener">🎓 Google Scholar</a>
           <a class="chip" href="https://www.linkedin.com/in/pragya-XXXX" target="_blank" rel="noopener">🔗 LinkedIn</a>
           <a class="chip" href="#projects">🧰 Projects</a>
-          <a class="chip" href="https://medium.com/@pragya.sharma" target="_blank" rel="noopener">✍️ Medium</a>
+          <a class="chip" href="https://medium.com/@pragya-XXXX" target="_blank" rel="noopener">✍️ Medium</a>
         </div>
       </div>
     </header>
@@ -81,9 +81,8 @@
   <nav>
     <div class="wrap">
       <a href="#about">About</a>
-      <a href="#artifacts">Open‑source</a>
+      <a href="#projects">On‑going Projects</a>
       <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
       <a href="#teaching">Teaching</a>
       <a href="#service">Service</a>
       <a href="#contact">Contact</a>
@@ -97,26 +96,29 @@
       <p>I build systems that make <em>real‑world</em> machine learning safe, fast, and efficient. My work sits at the intersection of <strong>machine learning</strong>, <strong>distributed systems</strong>, and <strong>cyber‑physical systems</strong> (CPS) with applications in autonomous vehicles and IoT. I design toolkits and methods for <strong>distributed inference</strong>, <strong>latency/accuracy trade‑offs</strong>, and <strong>energy‑aware pipelines</strong> across device–edge–cloud.</p>
     </section>
 
-    <!-- Open Source Artifacts -->
-    <section id="artifacts">
-      <h2>Open‑source artifacts</h2>
+    <!-- On-going Projects -->
+    <section id="projects">
+      <h2>On‑going Projects</h2>
       <div class="grid">
         <div class="card">
-          <strong>CADET</strong> — CARLA Automated Distributed Experimentation Toolkit.<br/>
-          <span class="small">ScenarioRunner orchestration, network delay emulation, energy profiling, and client‑server pipelines for braking and perception experiments.</span>
-          <div class="actions" style="margin-top:8px">
-            <a class="chip" href="https://github.com/sharma-pragya" target="_blank" rel="noopener">Repo</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">Docs</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">Demo</a>
-          </div>
+          <strong>CADET — CARLA Automated Distributed Experimentation Toolkit</strong>
+          <p class="small">A flagship open-source toolkit for simulating distributed inference pipelines in autonomous vehicles. CADET integrates CARLA + ScenarioRunner with network delay emulation, energy profiling, and client-server pipelines for braking, perception, and control experiments.</p>
+          <div class="actions"><a class="chip">Associated Publication</a></div>
         </div>
         <div class="card">
-          <strong>Time‑Series FM SDK</strong> — benchmarking & adapters for foundation models on temporal data.<br/>
-          <span class="small">Encoders/decoders/adapters, evaluation harness, and ILP‑informed placement for heterogeneous clusters.</span>
-          <div class="actions" style="margin-top:8px">
-            <a class="chip" href="#" target="_blank" rel="noopener">Repo</a>
-            <a class="chip" href="#" target="_blank" rel="noopener">Docs</a>
-          </div>
+          <strong>FMaaS — Foundation Models as a Service</strong>
+          <p class="small">A research system exploring deployment strategies for foundation models on heterogeneous clusters. FMaaS uses ILP-based formulations to optimize cost, redundancy, and performance under varying workloads.</p>
+          <div class="actions"><a class="chip">Associated Publication</a></div>
+        </div>
+        <div class="card">
+          <strong>FMTK — Time-Series Foundation Model Toolkit</strong>
+          <p class="small">A benchmarking and adapter suite for temporal foundation models. FMTK provides encoders, decoders, and adapters along with a standardized evaluation harness.</p>
+          <div class="actions"><a class="chip">Associated Publication</a></div>
+        </div>
+        <div class="card">
+          <strong>FM Zoo — Foundation Model Zoo for Heterogeneous Environments</strong>
+          <p class="small">A curated collection of open-source foundation models across vision, language, and time-series domains. FM Zoo standardizes interfaces and deployment scripts for diverse FMs, enabling plug-and-play experimentation on resource-constrained devices and distributed environments.</p>
+          <div class="actions"><a class="chip">Associated Publication</a></div>
         </div>
       </div>
     </section>
@@ -135,15 +137,6 @@
           <a class="chip" href="#" target="_blank" rel="noopener">Code</a>
           <a class="chip" href="#" target="_blank" rel="noopener">BibTeX</a>
         </div>
-        <details>
-          <summary>BibTeX</summary>
-          <pre><code>@inproceedings{sharma2023cloudiscloser,
-  title={Cloud-is-Closer: (edit with final title)},
-  author={Sharma, Pragya and Srivastava, Mani},
-  booktitle={MILCOM},
-  year={2023}
-}</code></pre>
-        </details>
       </article>
 
       <article class="pub">
@@ -159,26 +152,6 @@
         <div class="meta">ICRA (target)</div>
         <p class="small">Real‑time CPS validation with client‑server perception pipelines, network delay emulation, and energy profiling.</p>
       </article>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Selected Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <strong>Distributed AV Braking</strong>
-          <p class="small">Client‑server AV pipeline with YOLO detection and asynchronous brake signaling; end‑to‑end latency and safety analysis under varying network delays.</p>
-          <div class="actions"><a class="chip" href="#" target="_blank" rel="noopener">Repo</a> <a class="chip" href="#" target="_blank" rel="noopener">2–4 slides</a></div>
-        </div>
-        <div class="card">
-          <strong>Edge/Cloud Offloading in IoT</strong>
-          <p class="small">Systematic study of offload strategies for perception‑control loops across device and cloud with energy & accuracy trade‑offs.</p>
-        </div>
-        <div class="card">
-          <strong>Distributed LLMs for First Responders</strong>
-          <p class="small">Mobile guest devices offloading to ad‑hoc edge clusters; scenarios for remote deployments with limited connectivity.</p>
-        </div>
-      </div>
     </section>
 
     <!-- Teaching & Service -->
