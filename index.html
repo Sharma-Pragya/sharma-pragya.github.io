@@ -16,7 +16,7 @@
       --bg:#ffffff;       /* page background → white */
       --fg:#0f1a3a;       /* main text color → navy blue */
       --muted:#4a5568;    /* muted/secondary text → slate grey */
-      --link:#1e40af;     /* link color → medium navy */
+      --link:#0f1a3a;     /* link color → medium navy */
       --chip:#1e3a8a;     /* chips/bubbles background → deep blue */
       --chipfg:#ffffff;   /* chip text stays white */
       --card:#0f172a;     /* cards stay dark navy */
@@ -44,14 +44,17 @@
     p{margin:0 0 14px}
     ul{margin:8px 0 0 18px}
     .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:18px}
+    .card,
+    .pub {background: var(--card);color: #ffffff;}
+    .card strong {display: block;font-size: 18px;font-weight: 600;margin-bottom: 6px;color: #ffffff;}
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:720px){ .grid{grid-template-columns:1fr 1fr}}
     .pub{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:var(--card)}
     .pub img{width:80px;height:auto;border-radius:4px;flex-shrink:0}
     .pub-content{flex:1}
-    .pub h3{margin:0 0 8px;font-size:20px}
-    .pub .meta{color:var(--muted);font-size:14px;margin-bottom:6px}
-    .pub .authors{font-size:15px;margin-bottom:6px}
+    .pub h3{margin:0 0 8px;font-size:20px;color:#ffffff}
+    .pub .meta{color:rgba(255,255,255,0.75);font-size:14px;margin-bottom:6px}
+    .pub .authors{font-size:15px;margin-bottom:6px;color:#ffffff}
     .pub .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
     details{margin-top:8px}
     code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:13px}
