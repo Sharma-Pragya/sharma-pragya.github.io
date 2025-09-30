@@ -64,7 +64,7 @@
     section{padding:32px 0;scroll-margin-top:100px}
     section h2{font-size:22px;margin:0 0 14px;color:var(--highlight)}
     p{margin:0 0 14px}
-    ul{margin:8px 0 0 18px}
+    ul{margin:8px 0 14px 18px}
 
     /* Cards (projects) */
     .card{
@@ -104,6 +104,7 @@
     .pub img{width:80px;height:auto;border-radius:4px;flex-shrink:0}
     .pub-content{flex:1}
     .pub h3{margin:0 0 8px;font-size:20px;color:#ffffff}
+    .pub h3:before{content:'[' attr(data-number) '] ';color:rgba(255,255,255,0.5);font-weight:300;}
     .pub .meta{color:rgba(255,255,255,0.75);font-size:14px;margin-bottom:6px}
     .pub .authors{font-size:15px;margin-bottom:6px;color:#ffffff}
     .pub .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
@@ -260,15 +261,22 @@
     <!-- About -->
     <section id="about">
       <h2>About / Research Vision</h2>
-      <p>I build systems that make real-world machine learning safe, fast, and efficient. My work sits at the intersection of <strong>machine learning</strong>, <strong>distributed systems</strong>, and <strong>cyber-physical systems</strong> (CPS) with applications in autonomous vehicles and IoT. I design toolkits and methods for <strong>distributed inference</strong>, <strong>latency/accuracy trade-offs</strong>, and <strong>energy-aware pipelines</strong> across device–edge–cloud.</p>
-    </section>
+      <p>I am a PhD candidate in the ECE department at UCLA, advised by <strong>Prof. Mani Srivastava</strong>. My research advances the intersection of <strong>machine learning, distributed systems, and cyber-physical systems (CPS)</strong>, with applications in autonomous vehicles and the Internet of Things. My contributions include:</p>
+      <ul>
+        <li><strong>Distributed inference architectures</strong> — developing optimization methods and systems for the latency-accuracy-energy Pareto frontier within real-time ML/FM pipelines across the device–edge–cloud continum, targeting platforms from NVIDIA H100-class clusters to resource-constrained Jetson devices [6,7].</li>
+        <li><strong>Foundation model systems</strong> — architecting FMaaS [2], FMTK [4], and TrustBench [1] as comprehensive frameworks for systematic benchmarking and deployment of large language models (LLaMA-3, Gemma-2), vision-language models (Qwen-VL, Moondream), and time-series foundation models (Chronos, Moment) across heterogeneous computating platforms [2].</li>
+        <li><strong>Cooperative Autonomy evaluation infrastructure</strong> — developing CADET [3], the first open-source testbed integrating CARLA simulator with high-fidelity network emulation and heterogeneous compute modeling to enable cooperative autonomy policy evaluation under realistic distributed system constraints.</li>
+        <li><strong>Production-scale implementations</strong> — from challenging traditional latency-accuracy trade-offs in distributed real-time inference pipelines [5] to deploying production-scale Amazon Sidewalk.</li>
+      </ul>
+      <p>Prior to my doctoral studies, I contributed to IoT protocol design at Amazon Lab126 and studied automotive wireless systems at Bosch Research and Carnegie Mellon University. My research agenda focuses on establishing the theoretical foundations and systems infrastructure necessary for provably safe, resource-efficient, and high-performance distributed ML/FM architectures.</p>
+      </section>
 
     <!-- On-going Projects -->
     <section id="projects">
       <h2>On-going Projects</h2>
       <div class="grid">
         <div class="card">
-          <strong>CADET — Enabling Cooperative Autonomy via Distributed Experimentation Toolkitt</strong>
+          <strong>CADET — Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</strong>
           <p class="small">A first-of-a-kind open-source toolkit for simulating distributed inference pipelines in autonomous vehicles. CADET integrates CARLA + ScenarioRunner with network delay emulation, energy profiling, and client-server pipelines for braking, perception, and control experiments.</p>
           <div class="actions"><a class="chip chip-accent" href="#pub-cadet">Associated Publication</a></div>
         </div>
@@ -389,12 +397,25 @@
 
     <!-- Publications -->
     <section id="publications">
-      <h2>Publications</h2>
+      <h2>Selected Publications</h2>
+
+      <article class="pub" id="pub-trustbench">
+        <img src="assets/pubs/trustbench.png" alt="TrustBench thumbnail" />
+        <div class="pub-content">
+          <h3 data-number="1">TrustBench: Bridging Generalizable Metrics and Domain-Specific Evaluation for Trust in LLMs</h3>
+          <div class="authors">Authors TBD</div>
+          <div class="meta">The 40th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI '26) (under review)</strong></div>
+          <div class="actions">
+            <a class="chip chip-accent">Website</a>
+            <a class="chip chip-accent">Paper</a>
+          </div>
+        </div>
+      </article>
 
       <article class="pub" id="pub-fmaas">
         <img src="assets/pubs/fmaas.png" alt="FMaaS thumbnail" />
         <div class="pub-content">
-          <h3>FMaaS: Foundation Models as a Service</h3>
+          <h3 data-number="2">FMaaS: Foundation Models as a Service</h3>
           <div class="authors"><strong>P. Sharma*</strong>, H. H. Shastri*, P. Shenoy, M. B. Srivastava</div>
           <div class="meta">The 9th Annual Conference on Machine Learning and Systems <strong>(MLSys '26) (under review)</strong></div>
           <div class="actions">
@@ -407,7 +428,7 @@
       <article class="pub" id="pub-cadet">
         <img src="assets/pubs/cadet.png" alt="CADET thumbnail" />
         <div class="pub-content">
-          <h3>CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
+          <h3 data-number="3">CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
           <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
           <div class="meta">2026 IEEE International Conference on Robotics & Automation <strong>(ICRA '26) (under review)</strong> </div>
           <div class="actions">
@@ -420,7 +441,7 @@
       <article class="pub" id="pub-fmtk">
         <img src="assets/pubs/fmtk.png" alt="FMTK thumbnail" />
         <div class="pub-content">
-          <h3>FMTK: A Modular Toolkit for Composable Time Series Foundation Model Pipelines</h3>
+          <h3 data-number="4">FMTK: A Modular Toolkit for Composable Time Series Foundation Model Pipelines</h3>
           <div class="authors">H. H. Shastri, <strong>P. Sharma</strong>, P. Shenoy, M. B. Srivastava</div>
           <div class="meta">The 39th Annual Conference on Neural Information Processing Systems <strong>(NeurIPS '25) Accepted!</strong></div>
           <div class="actions">
@@ -433,7 +454,7 @@
       <article class="pub">
         <img src="assets/pubs/icccn.png" alt="Cloud Is Closer thumbnail" />
         <div class="pub-content">
-          <h3>Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</h3>
+          <h3 data-number="5">Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</h3>
           <div class="authors"><strong>P. Sharma</strong>, H. Qui, M. B. Srivastava</div>
           <div class="meta">2025 34th International Conference on Computer Communications and Networks <strong>(ICCCN '25)</strong></div>
           <div class="actions">
@@ -446,7 +467,7 @@
       <article class="pub">
         <img src="assets/pubs/hotmobile.png" alt="HotMobile thumbnail" />
         <div class="pub-content">
-          <h3>Towards a Performance-Driven Device-Edge-Cloud Relationship</h3>
+          <h3 data-number="6">Towards a Performance-Driven Device-Edge-Cloud Relationship</h3>
           <div class="authors"><strong>P. Sharma</strong>, B. Wang, X. Ouyang, R. Nanayakkara, B. Balaji, P. Tabuada, M. B. Srivastava</div>
           <div class="meta">Proceedings of the 26th International Workshop on Mobile Computing Systems and Applications <strong>(HotMobile '25)</strong> 2025</div>
           <div class="actions">
@@ -459,7 +480,7 @@
       <article class="pub">
         <img src="assets/pubs/milcom.png" alt="MILCOM thumbnail" />
         <div class="pub-content">
-          <h3>Impact of Delays and Computation Placement on Sense-Act Application Performance in IoT</h3>
+          <h3 data-number="7">Impact of Delays and Computation Placement on Sense-Act Application Performance in IoT</h3>
           <div class="authors"><strong>P. Sharma</strong>, M. B. Srivastava</div>
           <div class="meta">2023 IEEE Military Communications Conference <strong>(MILCOM '23)</strong></div>
           <div class="actions">
@@ -472,7 +493,7 @@
       <article class="pub">
         <img src="assets/pubs/jsac.png" alt="JSAC thumbnail" />
         <div class="pub-content">
-          <h3>Procuring Spontaneous Session-Level Resource Guarantees for Real-Time Applications: An Auction Approach</h3>
+          <h3 data-number="8">Procuring Spontaneous Session-Level Resource Guarantees for Real-Time Applications: An Auction Approach</h3>
           <div class="authors">M. Harishankar, S. Pilaka*, <strong>P. Sharma*</strong>, N. Srinivasan, C. Joe-Wong, P. Tague</div>
           <div class="meta">IEEE Journal on Selected Areas in Communications 2019 <strong>(JSAC '19)</strong></div>
           <div class="actions">
