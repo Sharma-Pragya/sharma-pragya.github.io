@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refined Publication Numbering - Formal & Minimalist</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#0f1a3a;
+      --card:#0f172a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;padding:40px 20px;background:var(--bg);color:var(--fg);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      max-width:1200px;margin:0 auto;
+    }
+    h1{font-size:28px;margin-bottom:40px;text-align:center;}
+    .option{margin-bottom:60px;padding:40px;border:2px solid #e5e7eb;border-radius:12px;}
+    .option h2{font-size:22px;margin:0 0 10px;color:#0f1a3a;}
+    .option .desc{color:#4a5568;margin-bottom:30px;font-size:15px;font-style:italic;}
+
+    /* Base publication card */
+    .pub{
+      display:flex;gap:16px;align-items:flex-start;padding:18px;
+      border-radius:12px;border:1px solid rgba(0,0,0,0.06);
+      background:var(--card);color:#ffffff;
+      margin-bottom:20px;
+      position:relative;
+    }
+    .pub img{width:80px;height:auto;border-radius:4px;flex-shrink:0}
+    .pub-content{flex:1}
+    .pub h3{margin:0 0 8px;font-size:20px;color:#ffffff}
+    .pub .meta{color:rgba(255,255,255,0.75);font-size:14px;margin-bottom:6px}
+    .pub .authors{font-size:15px;margin-bottom:6px;color:#ffffff}
+
+    /* OPTION A: Serif Number (Top Left) - Very Academic */
+    .pub.optionA .pub-number{
+      position:absolute;
+      top:16px;
+      left:16px;
+      color:rgba(255,255,255,0.4);
+      font-family:Georgia, 'Times New Roman', serif;
+      font-size:48px;
+      font-weight:300;
+      line-height:1;
+      pointer-events:none;
+    }
+    .pub.optionA{padding-left:24px;}
+
+    /* OPTION B: Thin Border Square (Left) - Swiss Design */
+    .pub.optionB{padding-left:80px;}
+    .pub.optionB .pub-number{
+      position:absolute;
+      left:18px;
+      top:50%;
+      transform:translateY(-50%);
+      width:48px;
+      height:48px;
+      border:1.5px solid rgba(255,255,255,0.3);
+      color:rgba(255,255,255,0.9);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      font-weight:300;
+      font-family:system-ui,-apple-system,sans-serif;
+      letter-spacing:0.5px;
+    }
+
+    /* OPTION C: Monospace Number (Bottom Right) - Technical */
+    .pub.optionC .pub-number{
+      position:absolute;
+      bottom:14px;
+      right:18px;
+      color:rgba(255,255,255,0.25);
+      font-family:'Courier New', monospace;
+      font-size:14px;
+      font-weight:400;
+      letter-spacing:1px;
+    }
+    .pub.optionC .pub-number:before{
+      content:'[';
+      opacity:0.5;
+    }
+    .pub.optionC .pub-number:after{
+      content:']';
+      opacity:0.5;
+    }
+
+    /* OPTION D: Thin Line + Number (Left Edge) - Ultra Minimal */
+    .pub.optionD{padding-left:60px;border-left:2px solid rgba(255,255,255,0.15);}
+    .pub.optionD .pub-number{
+      position:absolute;
+      left:-12px;
+      top:18px;
+      width:24px;
+      height:24px;
+      background:var(--card);
+      color:rgba(255,255,255,0.6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      font-weight:400;
+      border:1.5px solid rgba(255,255,255,0.15);
+      border-radius:50%;
+    }
+
+    /* OPTION E: Roman Numerals (Inline with Title) - Classical */
+    .pub.optionE h3{display:flex;align-items:baseline;gap:12px;}
+    .pub.optionE .pub-number{
+      color:rgba(255,255,255,0.4);
+      font-size:16px;
+      font-weight:300;
+      font-family:Georgia, 'Times New Roman', serif;
+      font-style:italic;
+      flex-shrink:0;
+    }
+
+    /* OPTION F: Simple Prefix (Before Title) - Pure Minimal */
+    .pub.optionF h3:before{
+      content:attr(data-number) '. ';
+      color:rgba(255,255,255,0.5);
+      font-weight:300;
+      margin-right:8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Refined Publication Numbering - Formal & Minimalist</h1>
+
+  <!-- OPTION A -->
+  <div class="option">
+    <h2>Option A: Large Serif Number (Watermark Style)</h2>
+    <p class="desc">Very academic. The number acts as a subtle watermark in the background.</p>
+
+    <article class="pub optionA">
+      <div class="pub-number">1</div>
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3>FMaaS: Foundation Models as a Service</h3>
+        <div class="authors"><strong>P. Sharma*</strong>, H. H. Shastri*, P. Shenoy, M. B. Srivastava</div>
+        <div class="meta">The 9th Annual Conference on Machine Learning and Systems <strong>(MLSys '26)</strong></div>
+      </div>
+    </article>
+
+    <article class="pub optionA">
+      <div class="pub-number">2</div>
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3>CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
+        <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
+        <div class="meta">2026 IEEE International Conference on Robotics & Automation <strong>(ICRA '26)</strong></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- OPTION B -->
+  <div class="option">
+    <h2>Option B: Thin Border Square (Swiss Design)</h2>
+    <p class="desc">Inspired by Swiss graphic design. Clean geometry, thin borders, perfect alignment.</p>
+
+    <article class="pub optionB">
+      <div class="pub-number">1</div>
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3>FMaaS: Foundation Models as a Service</h3>
+        <div class="authors"><strong>P. Sharma*</strong>, H. H. Shastri*, P. Shenoy, M. B. Srivastava</div>
+        <div class="meta">The 9th Annual Conference on Machine Learning and Systems <strong>(MLSys '26)</strong></div>
+      </div>
+    </article>
+
+    <article class="pub optionB">
+      <div class="pub-number">2</div>
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3>CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
+        <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
+        <div class="meta">2026 IEEE International Conference on Robotics & Automation <strong>(ICRA '26)</strong></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- OPTION C -->
+  <div class="option">
+    <h2>Option C: Monospace Citation Style (Bottom Right)</h2>
+    <p class="desc">Academic citation format. Subtle, technical, like a reference number [1].</p>
+
+    <article class="pub optionC">
+      <div class="pub-number">1</div>
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3>FMaaS: Foundation Models as a Service</h3>
+        <div class="authors"><strong>P. Sharma*</strong>, H. H. Shastri*, P. Shenoy, M. B. Srivastava</div>
+        <div class="meta">The 9th Annual Conference on Machine Learning and Systems <strong>(MLSys '26)</strong></div>
+      </div>
+    </article>
+
+    <article class="pub optionC">
+      <div class="pub-number">2</div>
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3>CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
+        <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
+        <div class="meta">2026 IEEE International Conference on Robotics & Automation <strong>(ICRA '26)</strong></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- OPTION D -->
+  <div class="option">
+    <h2>Option D: Thin Line + Circle (Ultra Minimal)</h2>
+    <p class="desc">Vertical line with small circle. Extremely subtle and refined.</p>
+
+    <article class="pub optionD">
+      <div class="pub-number">1</div>
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3>FMaaS: Foundation Models as a Service</h3>
+        <div class="authors"><strong>P. Sharma*</strong>, H. H. Shastri*, P. Shenoy, M. B. Srivastava</div>
+        <div class="meta">The 9th Annual Conference on Machine Learning and Systems <strong>(MLSys '26)</strong></div>
+      </div>
+    </article>
+
+    <article class="pub optionD">
+      <div class="pub-number">2</div>
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3>CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
+        <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
+        <div class="meta">2026 IEEE International Conference on Robotics & Automation <strong>(ICRA '26)</strong></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- OPTION E -->
+  <div class="option">
+    <h2>Option E: Roman Numerals (Inline with Title)</h2>
+    <p class="desc">Classical academic style. Roman numerals in italic serif font.</p>
+
+    <article class="pub optionE">
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3><span class="pub-number">I</span>FMaaS: Foundation Models as a Service</h3>
+        <div class="authors"><strong>P. Sharma*</strong>, H. H. Shastri*, P. Shenoy, M. B. Srivastava</div>
+        <div class="meta">The 9th Annual Conference on Machine Learning and Systems <strong>(MLSys '26)</strong></div>
+      </div>
+    </article>
+
+    <article class="pub optionE">
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3><span class="pub-number">II</span>CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
+        <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
+        <div class="meta">2026 IEEE International Conference on Robotics & Automation <strong>(ICRA '26)</strong></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- OPTION F -->
+  <div class="option">
+    <h2>Option F: Simple Prefix (Pure Minimal)</h2>
+    <p class="desc">Simplest option. Number directly before title like "1. Title"</p>
+
+    <article class="pub optionF">
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3 data-number="1">FMaaS: Foundation Models as a Service</h3>
+        <div class="authors"><strong>P. Sharma*</strong>, H. H. Shastri*, P. Shenoy, M. B. Srivastava</div>
+        <div class="meta">The 9th Annual Conference on Machine Learning and Systems <strong>(MLSys '26)</strong></div>
+      </div>
+    </article>
+
+    <article class="pub optionF">
+      <img src="https://via.placeholder.com/80x100/0f172a/ffffff?text=Paper" alt="Paper" />
+      <div class="pub-content">
+        <h3 data-number="2">CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
+        <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
+        <div class="meta">2026 IEEE International Conference on Robotics & Automation <strong>(ICRA '26)</strong></div>
+      </div>
+    </article>
+  </div>
+
+</body>
+</html>
