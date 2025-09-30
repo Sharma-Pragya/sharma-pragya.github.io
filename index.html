@@ -14,18 +14,21 @@
   <style>
     :root{
       --bg:#ffffff;       /* page background → white */
-      --fg:#0f1a3a;       /* main text color → navy blue */
-      --muted:#4a5568;    /* muted/secondary text → slate grey */
-      --link:#0f1a3a;     /* link color → medium navy */
-      --chip:#1e3a8a;     /* chips/bubbles background → deep blue */
-      --chipfg:#ffffff;   /* chip text stays white */
-      --card:#0f172a;     /* cards stay dark navy */
-      --accent:#e5e7eb;   /* border soft grey */
+      --fg:#0f1a3a;       /* main text → navy */
+      --muted:#4a5568;    /* secondary text */
+      --link:#0f1a3a;     /* links use same navy */
+      --chip:#1e3a8a;     /* chip background (keep) */
+      --chipfg:#ffffff;   /* chip text (keep) */
+      --card:#0f172a;     /* dark navy cards */
+      --accent:#e5e7eb;   /* borders */
       --highlight:#0f1a3a;/* section headings navy */
       --maxw:880px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    html,body{
+      margin:0;padding:0;background:var(--bg);color:var(--fg);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif
+    }
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
@@ -34,7 +37,11 @@
     h1{font-size:32px;line-height:1.2;margin:0 0 6px}
     .subtitle{color:var(--muted);font-size:18px}
     .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--chip);color:var(--chipfg) !important;font-size:15px;border:1px solid rgba(0,0,0,0.05)}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;background:var(--chip);
+      color:var(--chipfg) !important;font-size:15px;border:1px solid rgba(0,0,0,0.05)
+    }
     nav{position:sticky;top:0;background:var(--bg);border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;z-index:50}
     nav .wrap{display:flex;gap:16px;overflow:auto}
     nav a{padding:14px 6px;white-space:nowrap;color:var(--muted)}
@@ -43,19 +50,38 @@
     section h2{font-size:22px;margin:0 0 14px;color:var(--highlight)}
     p{margin:0 0 14px}
     ul{margin:8px 0 0 18px}
-    .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:18px}
-    .card,
-    .pub {background: var(--card);color: #ffffff;}
-    .card strong {display: block;font-size: 18px;font-weight: 600;margin-bottom: 6px;color: #ffffff;}
+
+    /* Cards (projects) */
+    .card{
+      background:var(--card);
+      border:1px solid rgba(0,0,0,0.06);
+      border-radius:12px;
+      padding:18px
+    }
+    .card strong{
+      display:block;font-size:18px;font-weight:600;margin-bottom:6px;
+      color:#ffffff !important; /* white title on dark card */
+    }
+    .card .small{
+      color:rgba(255,255,255,0.85) !important; /* readable body on dark card */
+    }
+
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:720px){ .grid{grid-template-columns:1fr 1fr}}
-    .pub{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:var(--card)}
+
+    /* Publications */
+    .pub{
+      display:flex;gap:16px;align-items:flex-start;padding:18px;
+      border-radius:12px;border:1px solid rgba(0,0,0,0.06);
+      background:var(--card);color:#ffffff;
+    }
     .pub img{width:80px;height:auto;border-radius:4px;flex-shrink:0}
     .pub-content{flex:1}
     .pub h3{margin:0 0 8px;font-size:20px;color:#ffffff}
     .pub .meta{color:rgba(255,255,255,0.75);font-size:14px;margin-bottom:6px}
     .pub .authors{font-size:15px;margin-bottom:6px;color:#ffffff}
     .pub .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+
     details{margin-top:8px}
     code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:13px}
     footer{padding:40px 0;color:var(--muted);font-size:14px}
@@ -83,6 +109,7 @@
       </div>
     </header>
   </div>
+
   <!-- Top Nav -->
   <nav>
     <div class="wrap">
@@ -221,7 +248,6 @@
           </div>
         </div>
       </article>
-
     </section>
 
     <!-- Teaching & Service -->
