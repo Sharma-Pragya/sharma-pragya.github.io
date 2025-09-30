@@ -59,13 +59,6 @@
       border-radius:12px;
       padding:18px
     }
-    .card .actions,
-    .pub .actions {
-      display: flex;       /* ensure flex layout */
-      flex-wrap: wrap;     /* allow wrapping */
-      gap: 10px;           /* consistent horizontal + vertical gap */
-    }
-    
     .card strong{
       display:block;font-size:18px;font-weight:600;margin-bottom:6px;
       color:#ffffff !important; /* white title on dark card */
@@ -73,7 +66,16 @@
     .card .small{
       color:rgba(255,255,255,0.85) !important; /* readable body on dark card */
     }
-
+    .card .actions,
+    .pub .actions {
+      display: flex;       /* ensure flex layout */
+      flex-wrap: wrap;     /* allow wrapping */
+      gap: 10px;           /* consistent horizontal + vertical gap */
+    }
+    .card .actions .chip,
+    .pub .actions .chip {
+      margin: 0;           /* gap handles spacing */
+    }
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:720px){ .grid{grid-template-columns:1fr 1fr}}
 
