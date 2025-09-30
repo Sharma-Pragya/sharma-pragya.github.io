@@ -1,0 +1,9 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://sharma-pragya.github.io/sitemap.xml
+
+# Crawl-delay to be respectful (optional)
+Crawl-delay: 1
