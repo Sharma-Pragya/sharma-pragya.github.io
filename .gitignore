@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Test files
+test-*.js
+*-mockup.html
+*-mock*.html
+screenshot-*.png
+*-replacements.html
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
