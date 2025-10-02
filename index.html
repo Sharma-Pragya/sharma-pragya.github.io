@@ -216,6 +216,36 @@
       font-size:15px;
       line-height:1.6;
     }
+    .sub-projects{
+      margin-top:20px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .sub-project{
+      padding:16px;
+      background:#f9fafb;
+      border-left:3px solid #6366f1;
+      border-radius:4px;
+    }
+    .sub-project h4{
+      margin:0 0 8px;
+      font-size:16px;
+      color:var(--fg);
+      font-weight:600;
+    }
+    .sub-project .sponsor{
+      color:#6366f1;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .sub-project p{
+      margin:0;
+      font-size:15px;
+      line-height:1.6;
+      color:#4b5563;
+    }
 
     details{margin-top:8px}
     code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:13px}
@@ -312,7 +342,7 @@
           </div>
         </div>
         <div class="exp-highlight">
-          Designed Amazon Sidewalk IoT network from the ground up, enabling seamless connectivity for millions of Ring and Amazon devices across the 900 MHz spectrum with optimized low-power embedded systems firmware.
+          Designed <a href="https://www.amazon.com/Amazon-Sidewalk/b?ie=UTF8&node=21328123011" target="_blank" rel="noopener" style="color:#6366f1;text-decoration:underline;">Amazon Sidewalk</a> IoT network from the ground up, enabling seamless connectivity for millions of Ring and Amazon devices across the 900 MHz spectrum with optimized low-power embedded systems firmware.
         </div>
         <div class="exp-tags">
           <span class="exp-tag">Embedded Systems</span>
@@ -343,7 +373,7 @@
           </div>
         </div>
         <div class="exp-highlight">
-          Hardware-software co-design for ultra-precise vehicle localization achieving 30cm accuracy using Ultra-Wide Band technology, revolutionizing the keyless entry experience for next-generation vehicles.
+          Hardware-software co-design for ultra-precise vehicle localization achieving 30cm accuracy using Ultra-Wide Band technology, revolutionizing the <a href="https://www.bosch-mobility.com/en/solutions/keys/perfectly-keyless/" target="_blank" rel="noopener" style="color:#6366f1;text-decoration:underline;">keyless entry</a> experience for next-generation vehicles.
         </div>
         <div class="exp-tags">
           <span class="exp-tag">Ultra-Wide Band (UWB)</span>
@@ -368,26 +398,39 @@
           <img src="https://logo.clearbit.com/cmu.edu" alt="Carnegie Mellon logo" class="exp-logo" />
           <div class="exp-info">
             <h3>Carnegie Mellon University</h3>
-            <div class="exp-role">Graduate Research Assistant (Ford R&D Sponsored) · 2018</div>
+            <div class="exp-role">Graduate Research Assistant · 2018</div>
           </div>
         </div>
         <div class="exp-highlight">
-          Led Ford-sponsored security research exposing critical vulnerabilities in passive keyless entry systems, demonstrating man-in-the-middle attacks effective at 300ft+ range using Software-Defined Radios.
+          Conducted cutting-edge research in automotive security, wireless systems, and network optimization across three major projects sponsored by Ford R&D, Argonne National Labs, and published in IEEE JSAC.
         </div>
         <div class="exp-tags">
           <span class="exp-tag">Security Research</span>
           <span class="exp-tag">SDR</span>
           <span class="exp-tag">Automotive</span>
-          <span class="exp-tag">MITM Attacks</span>
-          <span class="exp-tag">Ford Partnership</span>
+          <span class="exp-tag">Wireless Systems</span>
+          <span class="exp-tag">Network Optimization</span>
         </div>
         <div class="exp-details">
-          <p><strong>Impact & Achievements:</strong></p>
-          <ul>
-            <li>Served as Principal Investigator for the Passive Entry - Passive Start (PEPS) Car Security project sponsored by Ford R&D, identifying fundamental vulnerabilities in modern vehicle security systems.</li>
-            <li>Designed and implemented a complete attack infrastructure using Software-Defined Radios (SDR) to demonstrate man-in-the-middle attacks on passive keyless entry systems over a line-of-sight range exceeding 300 feet.</li>
-            <li>Delivered actionable security recommendations to Ford's R&D team, directly influencing the design of next-generation vehicle authentication protocols and contributing to industry-wide security improvements.</li>
-          </ul>
+          <div class="sub-projects">
+            <div class="sub-project">
+              <div class="sponsor">Ford R&D Sponsored</div>
+              <h4>PEPS Car Security: Passive Keyless Entry Vulnerability Analysis</h4>
+              <p>Served as Principal Investigator exposing critical vulnerabilities in passive keyless entry systems. Demonstrated man-in-the-middle attacks using Software-Defined Radios over 300ft range, delivering actionable security recommendations to Ford R&D that influenced next-generation vehicle authentication protocols.</p>
+            </div>
+
+            <div class="sub-project">
+              <div class="sponsor">IEEE JSAC 2019</div>
+              <h4>Admission Control for Real-Time Interactive Video Sessions</h4>
+              <p>Devised novel admission control algorithm to manage congestion and allocate resources for interactive video sessions. Designed and implemented WiFi (802.11g) testbed demonstrating 47% throughput improvement over traditional routers. Published in IEEE JSAC 2019 Special Issue on Multimedia Economics.</p>
+            </div>
+
+            <div class="sub-project">
+              <div class="sponsor">Argonne National Labs Sponsored</div>
+              <h4>DSRC/WAVE Stack for V2V Communication Security</h4>
+              <p>Developed open-source implementation of DSRC/WAVE stack on BladeRF (SDR) to emulate vehicle-to-vehicle communications. Engineered complete V2V information exchange infrastructure and analyzed security vulnerabilities in authentication mechanisms.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
