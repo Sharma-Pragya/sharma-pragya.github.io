@@ -134,6 +134,22 @@
       height:60px;
       object-fit:contain;
       flex-shrink:0;
+      border-radius:8px;
+      background:#f3f4f6;
+    }
+    .exp-logo-fallback{
+      width:60px;
+      height:60px;
+      flex-shrink:0;
+      border-radius:8px;
+      background:#e5e7eb;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:20px;
+      color:var(--fg);
+      letter-spacing:-1px;
     }
     .exp-info{
       flex:1;
@@ -251,6 +267,84 @@
     code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:13px}
     footer{padding:40px 0;color:var(--muted);font-size:14px}
     .small{font-size:14px;color:var(--muted)}
+
+    /* News Ticker */
+    .news-ticker{
+      border:1px solid #e0e0e0;
+      border-radius:8px;
+      padding:0.6rem 1.25rem;
+      background:#fafafa;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      overflow:hidden;
+    }
+    .news-ticker h3{
+      margin:0;
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:#888;
+      font-weight:700;
+      white-space:nowrap;
+      flex-shrink:0;
+      border-right:1px solid #ddd;
+      padding-right:1rem;
+    }
+    .ticker-window{
+      flex:1;
+      height:3.6rem;
+      overflow:hidden;
+      position:relative;
+    }
+    .ticker-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      animation:scroll-up 20s linear infinite;
+    }
+    .ticker-list li{
+      height:1.8rem;
+      line-height:1.8rem;
+      font-size:0.92rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      color:var(--fg);
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+    }
+    .ticker-list li img{
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      border-radius:3px;
+      flex-shrink:0;
+    }
+    .ticker-list li img.icra-logo{
+      width:36px;
+      height:18px;
+      object-fit:cover;
+      object-position:right center;
+    }
+    .ticker-badge{
+      display:inline-block;
+      font-size:0.65rem;
+      font-weight:700;
+      letter-spacing:0.04em;
+      padding:1px 5px;
+      border-radius:3px;
+      background:#0f1a3a;
+      color:#fff;
+      flex-shrink:0;
+      line-height:1.4;
+    }
+    .ticker-window:hover .ticker-list{animation-play-state:paused;}
+    @keyframes scroll-up{
+      0%  {transform:translateY(0);}
+      100%{transform:translateY(-9rem);}
+    }
   </style>
 </head>
 <body>
@@ -288,13 +382,32 @@
   </nav>
 
   <main class="wrap">
+    <!-- News Ticker (full-width, above About) -->
+    <aside class="news-ticker" aria-label="Latest news" style="max-width:100%;margin-bottom:24px;">
+      <h3>Latest</h3>
+      <div class="ticker-window">
+        <ul class="ticker-list">
+          <li><img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=64" alt="NVIDIA" />Incoming SSE Intern at <strong>NVIDIA</strong> — Summer 2026</li>
+          <li><img src="https://aaai.org/wp-content/uploads/2023/02/aaai-logo-RGB.jpg" alt="AAAI" />TrustBench accepted at <strong>AAAI 2026</strong></li>
+          <li><img src="https://2026.ieee-icra.org/wp-content/uploads/sites/2/2025/05/ICRA-VIE26-logo.png" alt="ICRA" class="icra-logo" />CADET accepted at <strong>ICRA 2026</strong> — find me in Vienna in June!</li>
+          <li><span class="ticker-badge">CPS-IoT</span>Publication Chair, FMSys'26 @ <strong>CPS-IoT Week</strong>, Saint-Malo</li>
+          <li><img src="https://www.google.com/s2/favicons?domain=neurips.cc&sz=64" alt="NeurIPS" />FMTK accepted at <strong>NeurIPS 2025</strong></li>
+          <li><img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=64" alt="NVIDIA" />Incoming SSE Intern at <strong>NVIDIA</strong> — Summer 2026</li>
+          <li><img src="https://aaai.org/wp-content/uploads/2023/02/aaai-logo-RGB.jpg" alt="AAAI" />TrustBench accepted at <strong>AAAI 2026</strong></li>
+          <li><img src="https://2026.ieee-icra.org/wp-content/uploads/sites/2/2025/05/ICRA-VIE26-logo.png" alt="ICRA" class="icra-logo" />CADET accepted at <strong>ICRA 2026</strong> — find me in Vienna in June!</li>
+          <li><span class="ticker-badge">CPS-IoT</span>Publication Chair, FMSys'26 @ <strong>CPS-IoT Week</strong>, Saint-Malo</li>
+          <li><img src="https://www.google.com/s2/favicons?domain=neurips.cc&sz=64" alt="NeurIPS" />FMTK accepted at <strong>NeurIPS 2025</strong></li>
+        </ul>
+      </div>
+    </aside>
+
     <!-- About -->
     <section id="about">
       <h2>About / Research Vision</h2>
       <p>I am a PhD candidate in the ECE department at UCLA, advised by <strong>Prof. Mani Srivastava</strong>. My research advances the intersection of <strong>machine learning, distributed systems, and cyber-physical systems (CPS)</strong>, with applications in autonomous vehicles and the Internet of Things. My contributions include:</p>
       <ul>
-        <li><strong>Distributed inference architectures</strong> — developing optimization methods and systems for the latency-accuracy-energy Pareto frontier within real-time ML/FM pipelines across the device–edge–cloud continum, targeting platforms from NVIDIA H100-class clusters to resource-constrained Jetson devices [6,7].</li>
-        <li><strong>Foundation model systems</strong> — architecting FMaaS [2], FMTK [4], and TrustBench [1] as comprehensive frameworks for systematic benchmarking and deployment of large language models (LLaMA-3, Gemma-2), vision-language models (Qwen-VL, Moondream), and time-series foundation models (Chronos, Moment) across heterogeneous computating platforms [2].</li>
+        <li><strong>Distributed inference architectures</strong> — developing optimization methods and systems for the latency-accuracy-energy Pareto frontier within real-time ML/FM pipelines across the device–edge–cloud continuum, targeting platforms from NVIDIA H100-class clusters to resource-constrained Jetson devices [6,7].</li>
+        <li><strong>Foundation model systems</strong> — architecting FMaaS [2], FMTK [4], and TrustBench [1] as comprehensive frameworks for systematic benchmarking and deployment of large language models (LLaMA-3, Gemma-2), vision-language models (Qwen-VL, Moondream), and time-series foundation models (Chronos, Moment) across heterogeneous computing platforms [2].</li>
         <li><strong>Cooperative Autonomy evaluation infrastructure</strong> — developing CADET [3], the first open-source testbed integrating CARLA simulator with high-fidelity network emulation and heterogeneous compute modeling to enable cooperative autonomy policy evaluation under realistic distributed system constraints.</li>
         <li><strong>Production-scale implementations</strong> — from challenging traditional latency-accuracy trade-offs in distributed real-time inference pipelines [5] to deploying production-scale Amazon Sidewalk.</li>
       </ul>
@@ -306,23 +419,16 @@
       <h2>On-going Projects</h2>
       <div class="grid">
         <div class="card">
-          <strong>CADET — Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</strong>
-          <p class="small">A first-of-a-kind open-source toolkit for simulating distributed inference pipelines in autonomous vehicles. CADET integrates CARLA + ScenarioRunner with network delay emulation, energy profiling, and client-server pipelines for braking, perception, and control experiments.</p>
-          <div class="actions"><a class="chip chip-accent" href="#pub-cadet">Associated Publication</a></div>
+          <strong>FM Orchestration</strong>
+          <p class="small">Temporal state encoders coupled with MPC or an RL policy as the planning layer, for closed-loop orchestration of foundation model pipelines across device-edge-cloud continua</p>
         </div>
         <div class="card">
-          <strong>FMaaS — Foundation Models as a Service</strong>
-          <p class="small">A research system exploring deployment strategies for foundation models on heterogeneous clusters. FMaaS uses ILP-based formulations to optimize cost, redundancy, and performance under varying workloads.</p>
-          <div class="actions"><a class="chip chip-accent" href="#pub-fmaas">Associated Publication</a></div>
+          <strong>CREST: Cross-platform Runtime Evaluation and Search Tool</strong>
+          <p class="small">A hardware-in-the-loop neural architecture search framework for sensing models on resource-constrained microcontrollers, exposing execution schedule and cross-target deployment sensitivity directly inside the search loop</p>
         </div>
         <div class="card">
-          <strong>FMTK — Foundation Model Toolkit for Time-Series Data</strong>
-          <p class="small">A benchmarking and adapter suite for temporal foundation models. FMTK provides encoders, decoders, and adapters along with a standardized evaluation harness.</p>
-          <div class="actions"><a class="chip chip-accent" href="#pub-fmtk">Associated Publication</a></div>
-        </div>
-        <div class="card">
-          <strong>FM Zoo — Foundation Model Zoo for Heterogeneous Environments</strong>
-          <p class="small">A curated collection of open-source foundation models across vision, language, and time-series domains. FM Zoo standardizes interfaces and deployment scripts for diverse FMs, enabling plug-and-play experimentation on resource-constrained devices and distributed environments.</p>
+          <strong>Real-Time CPS Application Taxonomy for FM Deployment</strong>
+          <p class="small">A unified deployment characterization across the perception-control-action spectrum of real-time CPS applications, including passive perception, open-loop response, and closed-loop control, with empirical evaluation on the CADET testbed and network sensitivity analysis identifying where deployment recommendations shift between device, edge, and cloud</p>
         </div>
       </div>
     </section>
@@ -331,11 +437,34 @@
     <section id="experience">
       <h2>Industry Experience</h2>
 
+      <!-- NVIDIA -->
+      <div class="exp-card">
+        <button class="expand-btn" onclick="toggleExpand(this)" aria-label="Expand details">+</button>
+        <div class="exp-header">
+          <img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=128" alt="NVIDIA logo" class="exp-logo" onerror="this.outerHTML='<div class=\'exp-logo-fallback\'>NV</div>'" />
+          <div class="exp-info">
+            <h3>NVIDIA</h3>
+            <div class="exp-role">Systems Software Engineering Intern · Summer 2026</div>
+          </div>
+        </div>
+        <div class="exp-highlight">
+          Joining NVIDIA's Autonomous Driving organization on the ML Loop team within the data/MLOps group.
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">ML Infrastructure</span>
+          <span class="exp-tag">Autonomous Driving</span>
+          <span class="exp-tag">Distributed Systems</span>
+          <span class="exp-tag">Data Pipelines</span>
+          <span class="exp-tag">MLOps</span>
+        </div>
+        <div class="exp-details"></div>
+      </div>
+
       <!-- Amazon -->
       <div class="exp-card">
         <button class="expand-btn" onclick="toggleExpand(this)" aria-label="Expand details">+</button>
         <div class="exp-header">
-          <img src="https://logo.clearbit.com/amazon.com" alt="Amazon logo" class="exp-logo" />
+          <img src="https://www.google.com/s2/favicons?domain=amazon.com&sz=128" alt="Amazon logo" class="exp-logo" onerror="this.outerHTML='<div class=\'exp-logo-fallback\'>AMZ</div>'" />
           <div class="exp-info">
             <h3>Amazon Lab126</h3>
             <div class="exp-role">Embedded Software Engineer · 2019 - 2021</div>
@@ -366,7 +495,7 @@
       <div class="exp-card">
         <button class="expand-btn" onclick="toggleExpand(this)" aria-label="Expand details">+</button>
         <div class="exp-header">
-          <img src="https://logo.clearbit.com/bosch.com" alt="Bosch logo" class="exp-logo" />
+          <img src="https://www.google.com/s2/favicons?domain=bosch.com&sz=128" alt="Bosch logo" class="exp-logo" onerror="this.outerHTML='<div class=\'exp-logo-fallback\'>BSH</div>'" />
           <div class="exp-info">
             <h3>Bosch LLC, R&D Department</h3>
             <div class="exp-role">Wireless Systems Intern · 2018</div>
@@ -395,7 +524,7 @@
       <div class="exp-card">
         <button class="expand-btn" onclick="toggleExpand(this)" aria-label="Expand details">+</button>
         <div class="exp-header">
-          <img src="https://logo.clearbit.com/cmu.edu" alt="Carnegie Mellon logo" class="exp-logo" />
+          <img src="https://www.google.com/s2/favicons?domain=cmu.edu&sz=128" alt="Carnegie Mellon logo" class="exp-logo" onerror="this.outerHTML='<div class=\'exp-logo-fallback\'>CMU</div>'" />
           <div class="exp-info">
             <h3>Carnegie Mellon University</h3>
             <div class="exp-role">Graduate Research Assistant · 2018</div>
@@ -439,12 +568,12 @@
     <section id="publications">
       <h2>Selected Publications</h2>
 
-      <article class="pub" id="pub-trustbench">
-        <img src="assets/pubs/fmaas.png" alt="TrustBench thumbnail" />
+      <article class="pub" id="pub-crest">
+        <img src="assets/pubs/fmaas.png" alt="CREST thumbnail" />
         <div class="pub-content">
-          <h3 data-number="1">TrustBench: Bridging Generalizable Metrics and Domain-Specific Evaluation for Trust in LLMs</h3>
-          <!-- <div class="authors">Authors TBD</div> -->
-          <div class="meta">The 40th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI '26) (under review)</strong></div>
+          <h3 data-number="1">CREST: Cross-platform Runtime Evaluation and Search Tool for Embedded Machine Learning Models on Resource-Constrained Platforms</h3>
+          <div class="authors">J. Q. Zales, <strong>P. Sharma</strong>, M. B. Srivastava</div>
+          <div class="meta">ACM Conference on Embedded Networked Sensor Systems <strong>(SenSys '27) (in submission)</strong></div>
           <div class="actions">
             <a class="chip chip-accent">Website</a>
             <a class="chip chip-accent">Paper</a>
@@ -452,12 +581,38 @@
         </div>
       </article>
 
-      <article class="pub" id="pub-fmaas">
-        <img src="assets/pubs/fmaas.png" alt="FMaaS thumbnail" />
+      <article class="pub" id="pub-fmvisor">
+        <img src="assets/pubs/fmaas.png" alt="FMvisor thumbnail" />
         <div class="pub-content">
-          <h3 data-number="2">FMaaS: Foundation Models as a Service</h3>
-          <div class="authors"><strong>P. Sharma*</strong>, H. H. Shastri*, P. Shenoy, M. B. Srivastava</div>
-          <div class="meta">The 9th Annual Conference on Machine Learning and Systems <strong>(MLSys '26) (under review)</strong></div>
+          <h3 data-number="2">FMvisor: Efficient Serving of Extensible Foundation Models via Model Virtualization</h3>
+          <div class="authors">H. Shastri, <strong>P. Sharma</strong>, W. A. Hanafy, D. Irwin, M. B. Srivastava, P. Shenoy</div>
+          <div class="meta">The 21st European Conference on Computer Systems <strong>(EuroSys '27) (under review)</strong></div>
+          <div class="actions">
+            <a class="chip chip-accent">Website</a>
+            <a class="chip chip-accent">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub" id="pub-holibench">
+        <img src="assets/pubs/fmaas.png" alt="HoliBench thumbnail" />
+        <div class="pub-content">
+          <h3 data-number="3">HoliBench: Cross-Platform Characterization and Deployment Optimization of Foundation Models for CPS-IoT Applications</h3>
+          <div class="authors">I. Chakrabarti, Z. Xiong, <strong>P. Sharma</strong>, M. B. Srivastava</div>
+          <div class="meta">ACM/IEEE Embedded Systems Week — Conference on Hardware/Software Codesign and System Synthesis <strong>(ESWeek / CODES+ISSS '26) (under review)</strong></div>
+          <div class="actions">
+            <a class="chip chip-accent">Website</a>
+            <a class="chip chip-accent">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub" id="pub-trustbench">
+        <img src="assets/pubs/fmaas.png" alt="TrustBench thumbnail" />
+        <div class="pub-content">
+          <h3 data-number="4">TrustBench: Bridging Generalizable Metrics and Domain-Specific Evaluation for Trust in LLMs</h3>
+          <div class="authors">T. Sharma, V. Sharma, <strong>P. Sharma</strong></div>
+          <div class="meta">The 40th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI '26) Accepted!</strong></div>
           <div class="actions">
             <a class="chip chip-accent">Website</a>
             <a class="chip chip-accent">Paper</a>
@@ -468,9 +623,9 @@
       <article class="pub" id="pub-cadet">
         <img src="assets/pubs/cadet.png" alt="CADET thumbnail" />
         <div class="pub-content">
-          <h3 data-number="3">CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
+          <h3 data-number="5">CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
           <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
-          <div class="meta">2026 IEEE International Conference on Robotics & Automation <strong>(ICRA '26) (under review)</strong> </div>
+          <div class="meta">2026 IEEE International Conference on Robotics &amp; Automation <strong>(ICRA '26) Accepted!</strong></div>
           <div class="actions">
             <a class="chip chip-accent" href="https://sharma-pragya.github.io/cadet-site/" target="_blank" rel="noopener">Website</a>
             <a class="chip chip-accent">Paper</a>
@@ -481,12 +636,11 @@
       <article class="pub" id="pub-fmtk">
         <img src="assets/pubs/fmtk.png" alt="FMTK thumbnail" />
         <div class="pub-content">
-          <h3 data-number="4">FMTK: A Modular Toolkit for Composable Time Series Foundation Model Pipelines</h3>
+          <h3 data-number="6">FMTK: A Modular Toolkit for Composable Time Series Foundation Model Pipelines</h3>
           <div class="authors">H. H. Shastri, <strong>P. Sharma</strong>, P. Shenoy, M. B. Srivastava</div>
           <div class="meta">The 39th Annual Conference on Neural Information Processing Systems <strong>(NeurIPS '25) Accepted!</strong></div>
           <div class="actions">
-            <!-- <a class="chip chip-accent" href="https://sharma-pragya.github.io/cadet-site/" target="_blank" rel="noopener">Website</a> -->
-            <a class="chip chip-accent" href="assets/pubs/fmtk-paper.pdf" target="_blank" rel="noopener">Paper</a>
+            <a class="chip chip-accent" href="https://sharma-pragya.github.io/assets/pubs/fmtk-paper.pdf" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
@@ -494,8 +648,8 @@
       <article class="pub">
         <img src="assets/pubs/icccn.png" alt="Cloud Is Closer thumbnail" />
         <div class="pub-content">
-          <h3 data-number="5">Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</h3>
-          <div class="authors"><strong>P. Sharma</strong>, H. Qui, M. B. Srivastava</div>
+          <h3 data-number="7">Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</h3>
+          <div class="authors"><strong>P. Sharma</strong>, H. Qiu, M. B. Srivastava</div>
           <div class="meta">2025 34th International Conference on Computer Communications and Networks <strong>(ICCCN '25)</strong></div>
           <div class="actions">
             <a class="chip chip-accent" href="https://sharma-pragya.github.io/cloud-is-closer-than-it-appears-site/" target="_blank" rel="noopener">Website</a>
@@ -507,11 +661,10 @@
       <article class="pub">
         <img src="assets/pubs/hotmobile.png" alt="HotMobile thumbnail" />
         <div class="pub-content">
-          <h3 data-number="6">Towards a Performance-Driven Device-Edge-Cloud Relationship</h3>
+          <h3 data-number="8">Towards a Performance-Driven Device-Edge-Cloud Relationship</h3>
           <div class="authors"><strong>P. Sharma</strong>, B. Wang, X. Ouyang, R. Nanayakkara, B. Balaji, P. Tabuada, M. B. Srivastava</div>
           <div class="meta">Proceedings of the 26th International Workshop on Mobile Computing Systems and Applications <strong>(HotMobile '25)</strong> 2025</div>
           <div class="actions">
-            <!-- <a class="chip chip-accent" href="https://sharma-pragya.github.io/cadet-site/" target="_blank" rel="noopener">Website</a> -->
             <a class="chip chip-accent" href="assets/pubs/hotmobile-paper.pdf" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
@@ -520,7 +673,7 @@
       <article class="pub">
         <img src="assets/pubs/milcom.png" alt="MILCOM thumbnail" />
         <div class="pub-content">
-          <h3 data-number="7">Impact of Delays and Computation Placement on Sense-Act Application Performance in IoT</h3>
+          <h3 data-number="9">Impact of Delays and Computation Placement on Sense-Act Application Performance in IoT</h3>
           <div class="authors"><strong>P. Sharma</strong>, M. B. Srivastava</div>
           <div class="meta">2023 IEEE Military Communications Conference <strong>(MILCOM '23)</strong></div>
           <div class="actions">
@@ -533,11 +686,10 @@
       <article class="pub">
         <img src="assets/pubs/jsac.png" alt="JSAC thumbnail" />
         <div class="pub-content">
-          <h3 data-number="8">Procuring Spontaneous Session-Level Resource Guarantees for Real-Time Applications: An Auction Approach</h3>
+          <h3 data-number="10">Procuring Spontaneous Session-Level Resource Guarantees for Real-Time Applications: An Auction Approach</h3>
           <div class="authors">M. Harishankar, S. Pilaka*, <strong>P. Sharma*</strong>, N. Srinivasan, C. Joe-Wong, P. Tague</div>
           <div class="meta">IEEE Journal on Selected Areas in Communications 2019 <strong>(JSAC '19)</strong></div>
           <div class="actions">
-            <!-- <a class="chip chip-accent" href="https://sharma-pragya.github.io/cadet-site/" target="_blank" rel="noopener">Website</a> -->
             <a class="chip chip-accent" href="assets/pubs/jsac-paper.pdf" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
@@ -559,6 +711,7 @@
     <section id="service">
       <h2>Service</h2>
       <ul>
+        <li>Publication Chair, FMSys'26 — 3rd International Workshop on Foundation Models for Cyber-Physical Systems &amp; Internet of Things, co-located with CPS-IoT Week 2026, Saint-Malo, France.</li>
         <li>Mentored 50+ undergraduate and graduate students for research projects and tech industry.</li>
         <li>Mentor, The Women of Color Project.</li>
         <li>Graduate Instructor, Los Angeles Computing Circle (CS Bootcamp 2022, 2023, 2024).</li>
@@ -576,7 +729,7 @@
     </section>
 
     <footer>
-      <div>© <span id="y"></span> Pragya Sharma. Built with plain HTML/CSS. <span class="small">Last updated: Sep 2025.</span></div>
+      <div>© <span id="y"></span> Pragya Sharma. Built with plain HTML/CSS. <span class="small">Last updated: May 2026.</span></div>
     </footer>
   </main>
 
