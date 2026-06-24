@@ -23,7 +23,8 @@
   <meta name="twitter:description" content="Ph.D. Candidate at UCLA researching distributed ML inference for autonomous vehicles and cyber-physical systems." />
   <meta name="twitter:image" content="https://sharma-pragya.github.io/assets/banner.jpg" />
 
-  <link rel="icon" href="assets/favicon.png" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <style>
     :root{
       --bg:#ffffff;       /* page background → white */
@@ -108,6 +109,24 @@
     .pub .meta{color:rgba(255,255,255,0.75);font-size:14px;margin-bottom:6px}
     .pub .authors{font-size:15px;margin-bottom:6px;color:#ffffff}
     .pub .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .pub-filters{
+      display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;
+    }
+    .pub-filter{
+      padding:8px 14px;border-radius:999px;
+      border:1px solid #e5e7eb;background:#ffffff;
+      color:var(--fg);font-size:14px;cursor:pointer;
+      transition:background 0.2s ease, border-color 0.2s ease;
+    }
+    .pub-filter:hover{border-color:#cbd5e1;background:#f9fafb;}
+    .pub-filter.active{
+      background:var(--chip);color:var(--chipfg);
+      border-color:var(--chip);
+    }
+    .pub-filter:focus-visible{
+      outline:2px solid var(--fg);outline-offset:2px;
+    }
+    .pub[hidden]{display:none !important;}
 
     /* Experience Cards */
     .exp-card{
@@ -567,8 +586,14 @@
     <!-- Publications -->
     <section id="publications">
       <h2>Selected Publications</h2>
+      <div class="pub-filters" role="tablist" aria-label="Filter publications">
+        <button type="button" class="pub-filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="pub-filter" data-filter="under-review" role="tab" aria-selected="false">Under review</button>
+        <button type="button" class="pub-filter" data-filter="workshop" role="tab" aria-selected="false">Workshop</button>
+        <button type="button" class="pub-filter" data-filter="journal" role="tab" aria-selected="false">Journal</button>
+      </div>
 
-      <article class="pub" id="pub-crest">
+      <article class="pub" id="pub-crest" data-categories="under-review">
         <img src="assets/pubs/fmaas.png" alt="CREST thumbnail" />
         <div class="pub-content">
           <h3 data-number="1">CREST: Cross-platform Runtime Evaluation and Search Tool for Embedded Machine Learning Models on Resource-Constrained Platforms</h3>
@@ -581,7 +606,7 @@
         </div>
       </article>
 
-      <article class="pub" id="pub-fmvisor">
+      <article class="pub" id="pub-fmvisor" data-categories="under-review">
         <img src="assets/pubs/fmaas.png" alt="FMvisor thumbnail" />
         <div class="pub-content">
           <h3 data-number="2">FMvisor: Efficient Serving of Extensible Foundation Models via Model Virtualization</h3>
@@ -594,7 +619,7 @@
         </div>
       </article>
 
-      <article class="pub" id="pub-holibench">
+      <article class="pub" id="pub-holibench" data-categories="under-review">
         <img src="assets/pubs/fmaas.png" alt="HoliBench thumbnail" />
         <div class="pub-content">
           <h3 data-number="3">HoliBench: Cross-Platform Characterization and Deployment Optimization of Foundation Models for CPS-IoT Applications</h3>
@@ -658,7 +683,7 @@
         </div>
       </article>
 
-      <article class="pub">
+      <article class="pub" data-categories="workshop">
         <img src="assets/pubs/hotmobile.png" alt="HotMobile thumbnail" />
         <div class="pub-content">
           <h3 data-number="8">Towards a Performance-Driven Device-Edge-Cloud Relationship</h3>
@@ -683,7 +708,7 @@
         </div>
       </article>
 
-      <article class="pub">
+      <article class="pub" data-categories="journal">
         <img src="assets/pubs/jsac.png" alt="JSAC thumbnail" />
         <div class="pub-content">
           <h3 data-number="10">Procuring Spontaneous Session-Level Resource Guarantees for Real-Time Applications: An Auction Approach</h3>
@@ -790,6 +815,24 @@
     };
     document.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    // Publication filters
+    const pubFilters = Array.from(document.querySelectorAll('.pub-filter'));
+    const pubs = Array.from(document.querySelectorAll('#publications .pub'));
+    pubFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        pubFilters.forEach(b => {
+          const active = b === btn;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        pubs.forEach(pub => {
+          const cats = (pub.dataset.categories || '').split(/\s+/);
+          pub.hidden = filter !== 'all' && !cats.includes(filter);
+        });
+      });
+    });
 
     // Toggle expand/collapse for experience cards
     function toggleExpand(btn) {
