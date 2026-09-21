@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pragya Sharma | Ph.D. Candidate UCLA | ML Systems & Autonomous Vehicles Research</title>
-  <meta name="description" content="Pragya Sharma - Ph.D. Candidate at UCLA researching machine learning, distributed systems, and cyber-physical systems. Specialized in autonomous vehicles, edge AI, IoT, and real-time distributed inference. Published at NeurIPS, ICRA, ICCCN, HotMobile." />
-  <meta name="keywords" content="Pragya Sharma, UCLA PhD, machine learning researcher, distributed systems, cyber-physical systems, autonomous vehicles, edge AI, IoT research, distributed inference, CADET toolkit, Amazon Sidewalk, real-time systems, MLSys, ICRA, NeurIPS, Mani Srivastava, embedded systems, foundation models" />
+  <meta name="description" content="Pragya Sharma - Ph.D. Candidate at UCLA researching machine learning, distributed systems, and cyber-physical systems. Specialized in autonomous vehicles, edge AI, IoT, and real-time distributed inference. Published at NeurIPS, AAAI, ICRA, ICCCN, HotMobile." />
+  <meta name="keywords" content="Pragya Sharma, UCLA PhD, machine learning researcher, distributed systems, cyber-physical systems, autonomous vehicles, edge AI, IoT research, distributed inference, CADET toolkit, Amazon Sidewalk, real-time systems, MLSys, ICRA, NeurIPS, Mani Srivastava, embedded systems, foundation models, FMplex, NVIDIA, agentic systems" />
   <meta name="author" content="Pragya Sharma" />
   <link rel="canonical" href="https://sharma-pragya.github.io/" />
 
@@ -127,6 +127,8 @@
       outline:2px solid var(--fg);outline-offset:2px;
     }
     .pub[hidden]{display:none !important;}
+    .status{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;
+      font-size:12px;font-weight:600;background:rgba(255,255,255,0.14);color:#fff;}
 
     /* Experience Cards */
     .exp-card{
@@ -406,16 +408,16 @@
       <h3>Latest</h3>
       <div class="ticker-window">
         <ul class="ticker-list">
-          <li><img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=64" alt="NVIDIA" />Incoming SSE Intern at <strong>NVIDIA</strong> — Summer 2026</li>
-          <li><img src="https://aaai.org/wp-content/uploads/2023/02/aaai-logo-RGB.jpg" alt="AAAI" />TrustBench accepted at <strong>AAAI 2026</strong></li>
-          <li><img src="https://2026.ieee-icra.org/wp-content/uploads/sites/2/2025/05/ICRA-VIE26-logo.png" alt="ICRA" class="icra-logo" />CADET accepted at <strong>ICRA 2026</strong> — find me in Vienna in June!</li>
-          <li><span class="ticker-badge">CPS-IoT</span>Publication Chair, FMSys'26 @ <strong>CPS-IoT Week</strong>, Saint-Malo</li>
-          <li><img src="https://www.google.com/s2/favicons?domain=neurips.cc&sz=64" alt="NeurIPS" />FMTK accepted at <strong>NeurIPS 2025</strong></li>
-          <li><img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=64" alt="NVIDIA" />Incoming SSE Intern at <strong>NVIDIA</strong> — Summer 2026</li>
-          <li><img src="https://aaai.org/wp-content/uploads/2023/02/aaai-logo-RGB.jpg" alt="AAAI" />TrustBench accepted at <strong>AAAI 2026</strong></li>
-          <li><img src="https://2026.ieee-icra.org/wp-content/uploads/sites/2/2025/05/ICRA-VIE26-logo.png" alt="ICRA" class="icra-logo" />CADET accepted at <strong>ICRA 2026</strong> — find me in Vienna in June!</li>
-          <li><span class="ticker-badge">CPS-IoT</span>Publication Chair, FMSys'26 @ <strong>CPS-IoT Week</strong>, Saint-Malo</li>
-          <li><img src="https://www.google.com/s2/favicons?domain=neurips.cc&sz=64" alt="NeurIPS" />FMTK accepted at <strong>NeurIPS 2025</strong></li>
+          <li><img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=64" alt="NVIDIA" /><strong>NVIDIA</strong> internship — SSE for ML Infra, details below</li>
+          <li><span class="ticker-badge">MILCOM</span>GrayTrack accepted at <strong>MILCOM '26</strong></li>
+          <li><span class="ticker-badge">arXiv</span><strong>FMplex</strong> on arXiv, under submission at ASPLOS '27</li>
+          <li><img src="https://2026.ieee-icra.org/wp-content/uploads/sites/2/2025/05/ICRA-VIE26-logo.png" alt="ICRA" class="icra-logo" /><strong>CADET</strong> presented at ICRA 2026 in Vienna</li>
+          <li><span class="ticker-badge">arXiv</span><strong>HoliBench</strong> and <strong>CREST</strong> now on arXiv</li>
+          <li><img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=64" alt="NVIDIA" /><strong>NVIDIA</strong> internship — SSE for ML Infra, details below</li>
+          <li><span class="ticker-badge">MILCOM</span>GrayTrack accepted at <strong>MILCOM '26</strong></li>
+          <li><span class="ticker-badge">arXiv</span><strong>FMplex</strong> on arXiv, under submission at ASPLOS '27</li>
+          <li><img src="https://2026.ieee-icra.org/wp-content/uploads/sites/2/2025/05/ICRA-VIE26-logo.png" alt="ICRA" class="icra-logo" /><strong>CADET</strong> presented at ICRA 2026 in Vienna</li>
+          <li><span class="ticker-badge">arXiv</span><strong>HoliBench</strong> and <strong>CREST</strong> now on arXiv</li>
         </ul>
       </div>
     </aside>
@@ -442,10 +444,6 @@
           <p class="small">Temporal state encoders coupled with MPC or an RL policy as the planning layer, for closed-loop orchestration of foundation model pipelines across device-edge-cloud continua</p>
         </div>
         <div class="card">
-          <strong>CREST: Cross-platform Runtime Evaluation and Search Tool</strong>
-          <p class="small">A hardware-in-the-loop neural architecture search framework for sensing models on resource-constrained microcontrollers, exposing execution schedule and cross-target deployment sensitivity directly inside the search loop</p>
-        </div>
-        <div class="card">
           <strong>Real-Time CPS Application Taxonomy for FM Deployment</strong>
           <p class="small">A unified deployment characterization across the perception-control-action spectrum of real-time CPS applications, including passive perception, open-loop response, and closed-loop control, with empirical evaluation on the CADET testbed and network sensitivity analysis identifying where deployment recommendations shift between device, edge, and cloud</p>
         </div>
@@ -463,20 +461,27 @@
           <img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=128" alt="NVIDIA logo" class="exp-logo" onerror="this.outerHTML='<div class=\'exp-logo-fallback\'>NV</div>'" />
           <div class="exp-info">
             <h3>NVIDIA</h3>
-            <div class="exp-role">Systems Software Engineering Intern · Summer 2026</div>
+            <div class="exp-role">Systems Software Engineering Intern · ML Infra (Alpamayo) · Summer 2026</div>
           </div>
         </div>
         <div class="exp-highlight">
-          Joining NVIDIA's Autonomous Driving organization on the ML Loop team within the data/MLOps group.
+          Built APOLLO, an agentic system for systematically investigating and optimizing distributed autonomous driving pipelines, delivering validated speedups of up to 8× and resource savings of up to 40%.
         </div>
         <div class="exp-tags">
           <span class="exp-tag">ML Infrastructure</span>
-          <span class="exp-tag">Autonomous Driving</span>
+          <span class="exp-tag">Agentic Systems</span>
           <span class="exp-tag">Distributed Systems</span>
-          <span class="exp-tag">Data Pipelines</span>
-          <span class="exp-tag">MLOps</span>
+          <span class="exp-tag">Performance Engineering</span>
+          <span class="exp-tag">Autonomous Driving</span>
         </div>
-        <div class="exp-details"></div>
+        <div class="exp-details">
+          <p><strong>Impact &amp; Achievements:</strong></p>
+          <p>Designed and implemented APOLLO (Agentic Pipeline Optimization and Learning Loop Orchestrator) for <a href="https://www.nvidia.com/en-us/solutions/autonomous-vehicles/alpamayo/" target="_blank" rel="noopener" style="color:#6366f1;text-decoration:underline;">Alpamayo</a>, which reconstructs distributed executions, characterizes bottlenecks, and investigates optimization hypotheses in parallel with specialized agentic stacks. Independent checks verify correctness and measurement validity before any change reaches engineering/developer approval, with built-in safeguards for access control and human oversight.</p>
+          <ul>
+            <li>Redesigned batching for a labeling stage of the Alpamayo data release pipeline, cutting its CPU cost by ~70% at full output parity. Projected capacity savings of up to 71,000 CPU-hours per week based on measured workloads.</li>
+            <li>Reduced CPU usage by ~40% and achieved speedups of up to ~8× across investigated pipeline components, validated via controlled experiments on runtime, resource consumption, and output parity.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Amazon -->
@@ -588,33 +593,47 @@
       <h2>Selected Publications</h2>
       <div class="pub-filters" role="tablist" aria-label="Filter publications">
         <button type="button" class="pub-filter active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button type="button" class="pub-filter" data-filter="under-review" role="tab" aria-selected="false">Under review</button>
+        <button type="button" class="pub-filter" data-filter="under-review" role="tab" aria-selected="false">Preprints &amp; under review</button>
         <button type="button" class="pub-filter" data-filter="workshop" role="tab" aria-selected="false">Workshop</button>
         <button type="button" class="pub-filter" data-filter="journal" role="tab" aria-selected="false">Journal</button>
       </div>
 
-      <article class="pub" id="pub-crest" data-categories="under-review">
-        <img src="assets/pubs/fmaas.png" alt="CREST thumbnail" />
+      <article class="pub" id="pub-fmplex" data-categories="under-review">
+        <img src="assets/pubs/fmaas.png" alt="FMplex thumbnail" />
         <div class="pub-content">
-          <h3 data-number="1">CREST: Cross-platform Runtime Evaluation and Search Tool for Embedded Machine Learning Models on Resource-Constrained Platforms</h3>
-          <div class="authors">J. Q. Zales, <strong>P. Sharma</strong>, M. B. Srivastava</div>
-          <div class="meta">ACM Conference on Embedded Networked Sensor Systems <strong>(SenSys '27) (in submission)</strong></div>
+          <h3 data-number="1">FMplex: Model Virtualization for Serving Extensible Foundation Models</h3>
+          <div class="authors">H. Shastri, <strong>P. Sharma</strong>, W. A. Hanafy, D. Irwin, M. B. Srivastava, P. Shenoy</div>
+          <div class="meta">ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS '27)<span class="status">Under submission</span></div>
           <div class="actions">
-            <a class="chip chip-accent">Website</a>
-            <a class="chip chip-accent">Paper</a>
+            <a class="chip chip-accent" href="https://arxiv.org/abs/2606.09643" target="_blank" rel="noopener">Paper</a>
           </div>
         </div>
       </article>
 
-      <article class="pub" id="pub-fmvisor" data-categories="under-review">
-        <img src="assets/pubs/fmaas.png" alt="FMvisor thumbnail" />
+      <article class="pub" id="pub-graytrack">
+        <img src="assets/pubs/fmaas.png" alt="GrayTrack thumbnail" />
         <div class="pub-content">
-          <h3 data-number="2">FMvisor: Efficient Serving of Extensible Foundation Models via Model Virtualization</h3>
-          <div class="authors">H. Shastri, <strong>P. Sharma</strong>, W. A. Hanafy, D. Irwin, M. B. Srivastava, P. Shenoy</div>
-          <div class="meta">The 21st European Conference on Computer Systems <strong>(EuroSys '27) (under review)</strong></div>
+          <h3 data-number="2">Beyond Direct Sensing: Harnessing Indirect Observations from Third-Party Sensors in Vehicle Tracking</h3>
+          <div class="authors">G. Dong*, V. Eyunni*, <strong>P. Sharma</strong>, K. Yang, M. B. Srivastava</div>
+          <div class="meta">* Equal contribution</div>
+          <div class="meta">IEEE Military Communications Conference (MILCOM '26)</div>
           <div class="actions">
-            <a class="chip chip-accent">Website</a>
-            <a class="chip chip-accent" href="https://arxiv.org/abs/2606.09643" target="_blank" rel="noopener">Paper</a>
+            <a class="chip chip-accent" href="https://nesl.github.io/GrayTrack/" target="_blank" rel="noopener">Website</a>
+            <a class="chip chip-accent" href="https://arxiv.org/abs/2609.18173" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub" id="pub-crest" data-categories="under-review">
+        <img src="assets/pubs/fmaas.png" alt="CREST thumbnail" />
+        <div class="pub-content">
+          <h3 data-number="3">CREST: Deployment-Realistic Hardware-in-the-Loop NAS for Embedded Sensing Systems</h3>
+          <div class="authors">J. Q. Zales, <strong>P. Sharma</strong>, M. B. Srivastava</div>
+          <div class="meta">arXiv preprint</div>
+          <div class="actions">
+            <a class="chip chip-accent" href="https://joseph-q-zales.github.io/crest-site/" target="_blank" rel="noopener">Website</a>
+            <a class="chip chip-accent" href="https://arxiv.org/abs/2606.15004" target="_blank" rel="noopener">Paper</a>
+            <a class="chip chip-accent" href="https://github.com/nesl/crest" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
       </article>
@@ -622,25 +641,13 @@
       <article class="pub" id="pub-holibench" data-categories="under-review">
         <img src="assets/pubs/fmaas.png" alt="HoliBench thumbnail" />
         <div class="pub-content">
-          <h3 data-number="3">HoliBench: Cross-Platform Characterization and Deployment Optimization of Foundation Models for CPS-IoT Applications</h3>
-          <div class="authors">I. Chakrabarti, Z. Xiong, <strong>P. Sharma</strong>, M. B. Srivastava</div>
-          <div class="meta">ACM Conference on Embedded Networked Sensor Systems <strong>(SenSys '27) (under review)</strong></div>
+          <h3 data-number="4">HoliBench: A Cross-Platform Benchmarking and Deployment Toolkit for Foundation Models in CPS-IoT Applications</h3>
+          <div class="authors">I. Chakrabarti*, Z. Xiong*, <strong>P. Sharma</strong>, M. B. Srivastava</div>
+          <div class="meta">* Equal contribution</div>
+          <div class="meta">arXiv preprint</div>
           <div class="actions">
-            <a class="chip chip-accent">Website</a>
-            <a class="chip chip-accent">Paper</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="pub" id="pub-trustbench">
-        <img src="assets/pubs/fmaas.png" alt="TrustBench thumbnail" />
-        <div class="pub-content">
-          <h3 data-number="4">TrustBench: Bridging Generalizable Metrics and Domain-Specific Evaluation for Trust in LLMs</h3>
-          <div class="authors">T. Sharma, V. Sharma, <strong>P. Sharma</strong></div>
-          <div class="meta">The 40th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI '26) Accepted!</strong></div>
-          <div class="actions">
-            <a class="chip chip-accent">Website</a>
-            <a class="chip chip-accent" href="https://arxiv.org/abs/2603.09157" target="_blank" rel="noopener">Paper</a>
+            <a class="chip chip-accent" href="https://arxiv.org/abs/2609.12412" target="_blank" rel="noopener">Paper</a>
+            <a class="chip chip-accent" href="https://github.com/beesfleas/HoliBench" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
       </article>
@@ -650,7 +657,7 @@
         <div class="pub-content">
           <h3 data-number="5">CADET: Enabling Cooperative Autonomy via Distributed Experimentation Toolkit</h3>
           <div class="authors"><strong>P. Sharma</strong>, B. Wang, M. B. Srivastava</div>
-          <div class="meta">2026 IEEE International Conference on Robotics &amp; Automation <strong>(ICRA '26) Accepted!</strong></div>
+          <div class="meta">2026 IEEE International Conference on Robotics &amp; Automation (ICRA '26)</div>
           <div class="actions">
             <a class="chip chip-accent" href="https://sharma-pragya.github.io/cadet-site/" target="_blank" rel="noopener">Website</a>
             <a class="chip chip-accent" href="https://arxiv.org/abs/2606.04072" target="_blank" rel="noopener">Paper</a>
@@ -658,12 +665,24 @@
         </div>
       </article>
 
+      <article class="pub" id="pub-trustbench">
+        <img src="assets/pubs/fmaas.png" alt="TrustBench thumbnail" />
+        <div class="pub-content">
+          <h3 data-number="6">TrustBench: Bridging Generalizable Metrics and Domain-Specific Evaluation for Trust in LLMs</h3>
+          <div class="authors">T. Sharma, V. Sharma, <strong>P. Sharma</strong></div>
+          <div class="meta">The 40th Annual AAAI Conference on Artificial Intelligence (AAAI '26)</div>
+          <div class="actions">
+            <a class="chip chip-accent" href="https://arxiv.org/abs/2603.09157" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </article>
+
       <article class="pub" id="pub-fmtk">
         <img src="assets/pubs/fmtk.png" alt="FMTK thumbnail" />
         <div class="pub-content">
-          <h3 data-number="6">FMTK: A Modular Toolkit for Composable Time Series Foundation Model Pipelines</h3>
+          <h3 data-number="7">FMTK: A Modular Toolkit for Composable Time Series Foundation Model Pipelines</h3>
           <div class="authors">H. H. Shastri, <strong>P. Sharma</strong>, P. Shenoy, M. B. Srivastava</div>
-          <div class="meta">The 39th Annual Conference on Neural Information Processing Systems <strong>(NeurIPS '25) Accepted!</strong></div>
+          <div class="meta">The 39th Annual Conference on Neural Information Processing Systems (NeurIPS '25)</div>
           <div class="actions">
             <a class="chip chip-accent" href="https://sharma-pragya.github.io/assets/pubs/fmtk-paper.pdf" target="_blank" rel="noopener">Paper</a>
           </div>
@@ -673,7 +692,7 @@
       <article class="pub">
         <img src="assets/pubs/icccn.png" alt="Cloud Is Closer thumbnail" />
         <div class="pub-content">
-          <h3 data-number="7">Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</h3>
+          <h3 data-number="8">Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</h3>
           <div class="authors"><strong>P. Sharma</strong>, H. Qiu, M. B. Srivastava</div>
           <div class="meta">2025 34th International Conference on Computer Communications and Networks <strong>(ICCCN '25)</strong></div>
           <div class="actions">
@@ -686,7 +705,7 @@
       <article class="pub" data-categories="workshop">
         <img src="assets/pubs/hotmobile.png" alt="HotMobile thumbnail" />
         <div class="pub-content">
-          <h3 data-number="8">Towards a Performance-Driven Device-Edge-Cloud Relationship</h3>
+          <h3 data-number="9">Towards a Performance-Driven Device-Edge-Cloud Relationship</h3>
           <div class="authors"><strong>P. Sharma</strong>, B. Wang, X. Ouyang, R. Nanayakkara, B. Balaji, P. Tabuada, M. B. Srivastava</div>
           <div class="meta">Proceedings of the 26th International Workshop on Mobile Computing Systems and Applications <strong>(HotMobile '25)</strong> 2025</div>
           <div class="actions">
@@ -698,7 +717,7 @@
       <article class="pub">
         <img src="assets/pubs/milcom.png" alt="MILCOM thumbnail" />
         <div class="pub-content">
-          <h3 data-number="9">Impact of Delays and Computation Placement on Sense-Act Application Performance in IoT</h3>
+          <h3 data-number="10">Impact of Delays and Computation Placement on Sense-Act Application Performance in IoT</h3>
           <div class="authors"><strong>P. Sharma</strong>, M. B. Srivastava</div>
           <div class="meta">2023 IEEE Military Communications Conference <strong>(MILCOM '23)</strong></div>
           <div class="actions">
@@ -711,8 +730,9 @@
       <article class="pub" data-categories="journal">
         <img src="assets/pubs/jsac.png" alt="JSAC thumbnail" />
         <div class="pub-content">
-          <h3 data-number="10">Procuring Spontaneous Session-Level Resource Guarantees for Real-Time Applications: An Auction Approach</h3>
+          <h3 data-number="11">Procuring Spontaneous Session-Level Resource Guarantees for Real-Time Applications: An Auction Approach</h3>
           <div class="authors">M. Harishankar, S. Pilaka*, <strong>P. Sharma*</strong>, N. Srinivasan, C. Joe-Wong, P. Tague</div>
+          <div class="meta">* Equal contribution</div>
           <div class="meta">IEEE Journal on Selected Areas in Communications 2019 <strong>(JSAC '19)</strong></div>
           <div class="actions">
             <a class="chip chip-accent" href="assets/pubs/jsac-paper.pdf" target="_blank" rel="noopener">Paper</a>
@@ -754,7 +774,7 @@
     </section>
 
     <footer>
-      <div>© <span id="y"></span> Pragya Sharma. Built with plain HTML/CSS. <span class="small">Last updated: May 2026.</span></div>
+      <div>© <span id="y"></span> Pragya Sharma. Built with plain HTML/CSS. <span class="small">Last updated: September 2026.</span></div>
     </footer>
   </main>
 
@@ -775,7 +795,7 @@
       "https://github.com/sharma-pragya",
       "https://scholar.google.com/citations?user=Jra7ZnsAAAAJ&hl=en",
       "https://www.linkedin.com/in/pragyasharma29/",
-      "https://medium.com/@pragya-sharma"
+      "https://medium.com/@pragya.sharma"
     ],
     "email": "pragyasharma@ucla.edu",
     "alumniOf": [
