@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pragya Sharma | Ph.D. Candidate UCLA | ML Systems & Autonomous Vehicles Research</title>
-  <meta name="description" content="Pragya Sharma - Ph.D. Candidate at UCLA researching machine learning, distributed systems, and cyber-physical systems. Specialized in autonomous vehicles, edge AI, IoT, and real-time distributed inference. Published at NeurIPS, AAAI, ICRA, ICCCN, HotMobile." />
+  <meta name="description" content="Pragya Sharma - Ph.D. Candidate at UCLA building systems and infrastructure for deploying ML and foundation models across heterogeneous and distributed compute, with applications in autonomous and cyber-physical systems. Published at NeurIPS, AAAI, ICRA, ICCCN, HotMobile." />
   <meta name="keywords" content="Pragya Sharma, UCLA PhD, machine learning researcher, distributed systems, cyber-physical systems, autonomous vehicles, edge AI, IoT research, distributed inference, CADET toolkit, Amazon Sidewalk, real-time systems, MLSys, ICRA, NeurIPS, Mani Srivastava, embedded systems, foundation models, FMplex, NVIDIA, agentic systems" />
   <meta name="author" content="Pragya Sharma" />
   <link rel="canonical" href="https://sharma-pragya.github.io/" />
@@ -13,14 +13,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sharma-pragya.github.io/" />
   <meta property="og:title" content="Pragya Sharma | ML × Systems × CPS Research" />
-  <meta property="og:description" content="Ph.D. Candidate at UCLA specializing in distributed ML inference for autonomous vehicles and cyber-physical systems. Research on edge AI, IoT, and real-time systems." />
+  <meta property="og:description" content="Ph.D. Candidate at UCLA building systems and infrastructure for deploying ML and foundation models across heterogeneous and distributed compute, with applications in autonomous and cyber-physical systems." />
   <meta property="og:image" content="https://sharma-pragya.github.io/assets/banner.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://sharma-pragya.github.io/" />
   <meta name="twitter:title" content="Pragya Sharma | ML × Systems × CPS Research" />
-  <meta name="twitter:description" content="Ph.D. Candidate at UCLA researching distributed ML inference for autonomous vehicles and cyber-physical systems." />
+  <meta name="twitter:description" content="Ph.D. Candidate at UCLA building systems and infrastructure for deploying ML and foundation models across heterogeneous and distributed compute, with applications in autonomous and cyber-physical systems." />
   <meta name="twitter:image" content="https://sharma-pragya.github.io/assets/banner.jpg" />
 
   <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32" />
@@ -93,6 +93,7 @@
     }
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:720px){ .grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){ header{flex-direction:column;align-items:flex-start} header img{width:140px;height:140px} }
 
     /* Publications */
     .pub{
@@ -237,7 +238,7 @@
       margin-top:12px;
     }
     .exp-details.open{
-      max-height:800px;
+      max-height:2000px;
     }
     .exp-details p{
       margin:8px 0;
@@ -425,15 +426,14 @@
     <!-- About -->
     <section id="about">
       <h2>About / Research Vision</h2>
-      <p>I am a PhD candidate in the ECE department at UCLA, advised by <strong>Prof. Mani Srivastava</strong>. My research advances the intersection of <strong>machine learning, distributed systems, and cyber-physical systems (CPS)</strong>, with applications in autonomous vehicles and the Internet of Things. My contributions include:</p>
+      <p>I'm a PhD candidate in ECE at UCLA, advised by <a href="https://www.ee.ucla.edu/mani-srivastava/" target="_blank" rel="noopener"><strong>Prof. Mani Srivastava</strong></a>. My research focuses on systems and infrastructure for deploying and operating machine learning and foundation models across heterogeneous and distributed computing environments, with applications in autonomous and cyber-physical systems. I build systems that use application requirements, together with workload and resource constraints, to guide how models are placed, served, and orchestrated. My work spans three thrusts:</p>
       <ul>
-        <li><strong>Distributed inference architectures</strong> — developing optimization methods and systems for the latency-accuracy-energy Pareto frontier within real-time ML/FM pipelines across the device–edge–cloud continuum, targeting platforms from NVIDIA H100-class clusters to resource-constrained Jetson devices and microcontrollers [1,7,8].</li>
-        <li><strong>Foundation model systems</strong> — architecting FMvisor [2], HoliBench [3], TrustBench [4], and FMTK [6] for efficient deployment, benchmarking, and evaluation of large language models (LLaMA-3, Gemma-2), vision-language models (Qwen-VL, Moondream), and time-series foundation models (Chronos, Moment) across heterogeneous computing platforms.</li>
-        <li><strong>Cooperative Autonomy evaluation infrastructure</strong> — developing CADET [5], the first open-source testbed integrating CARLA simulator with high-fidelity network emulation and heterogeneous compute modeling to enable cooperative autonomy policy evaluation under realistic distributed system constraints.</li>
-        <li><strong>Production-scale implementations</strong> — from challenging traditional latency-accuracy trade-offs in distributed real-time inference pipelines [7] to deploying production-scale Amazon Sidewalk.</li>
+        <li><strong>Foundation-model serving and production ML infrastructure.</strong> FMplex <a href="#pub-fmplex">[1]</a> brings virtualization to model serving, allowing customized tasks to share a foundation model while maintaining their own extensions and isolation. FMTK <a href="#pub-fmtk">[7]</a> makes foundation-model pipelines composable from reusable components. At NVIDIA, I built APOLLO, an agentic system for finding and validating optimizations in the pipeline behind <a href="https://www.nvidia.com/en-us/solutions/autonomous-vehicles/alpamayo/" target="_blank" rel="noopener">Alpamayo</a>, NVIDIA's autonomous-driving foundation model. It is now used across the team and broader organization.</li>
+        <li><strong>Task-aware placement and orchestration.</strong> My work on splitting perception and control pipelines across device, edge, and cloud shows that deployment decisions should follow task objectives and system conditions <a href="#pub-hotmobile">[9]</a><a href="#pub-milcom23">[10]</a>, and that cloud execution can outperform local inference even for real-time control <a href="#pub-icccn">[8]</a>. I am currently extending this direction to stateful foundation-model pipelines that adapt at runtime.</li>
+        <li><strong>Extensible evaluation and deployment infrastructure.</strong> CADET <a href="#pub-cadet">[5]</a> integrates driving simulation, network emulation, and heterogeneous hardware to evaluate deployment decisions against application-level outcomes. HoliBench <a href="#pub-holibench">[4]</a> and CREST <a href="#pub-crest">[3]</a> apply the same extensible approach to cross-platform foundation-model characterization and hardware-in-the-loop model design, allowing new devices, models, and backends to plug into a common workflow.</li>
       </ul>
-      <p>Prior to my doctoral studies, I contributed to IoT protocol design at Amazon Lab126 and studied automotive wireless systems at Bosch Research and Carnegie Mellon University. My research agenda focuses on establishing the theoretical foundations and systems infrastructure necessary for provably safe, resource-efficient, and high-performance distributed ML/FM architectures.</p>
-      </section>
+      <p>Before my PhD, I spent about three years at Amazon building <a href="https://www.amazon.com/Amazon-Sidewalk/b?ie=UTF8&node=21328123011" target="_blank" rel="noopener">Amazon Sidewalk</a>, a low-power IoT network now running on millions of devices, and worked on automotive wireless systems at Bosch Research and Carnegie Mellon University. <span style="color:#b04040;">I expect to graduate in March 2027 and am looking for ML infrastructure and research engineering roles.</span></p>
+    </section>
 
     <!-- On-going Projects -->
     <section id="projects">
@@ -461,7 +461,7 @@
           <img src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=128" alt="NVIDIA logo" class="exp-logo" onerror="this.outerHTML='<div class=\'exp-logo-fallback\'>NV</div>'" />
           <div class="exp-info">
             <h3>NVIDIA</h3>
-            <div class="exp-role">Systems Software Engineering Intern · ML Infra (Alpamayo) · Summer 2026</div>
+            <div class="exp-role">Systems Software Engineering Intern · ML Infra (<a href="https://www.nvidia.com/en-us/solutions/autonomous-vehicles/alpamayo/" target="_blank" rel="noopener" style="color:#6366f1;text-decoration:underline;">Alpamayo</a>) · Summer 2026</div>
           </div>
         </div>
         <div class="exp-highlight">
@@ -591,12 +591,6 @@
     <!-- Publications -->
     <section id="publications">
       <h2>Selected Publications</h2>
-      <div class="pub-filters" role="tablist" aria-label="Filter publications">
-        <button type="button" class="pub-filter active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button type="button" class="pub-filter" data-filter="under-review" role="tab" aria-selected="false">Preprints &amp; under review</button>
-        <button type="button" class="pub-filter" data-filter="workshop" role="tab" aria-selected="false">Workshop</button>
-        <button type="button" class="pub-filter" data-filter="journal" role="tab" aria-selected="false">Journal</button>
-      </div>
 
       <article class="pub" id="pub-fmplex" data-categories="under-review">
         <img src="assets/pubs/fmaas.png" alt="FMplex thumbnail" />
@@ -689,7 +683,7 @@
         </div>
       </article>
 
-      <article class="pub">
+      <article class="pub" id="pub-icccn">
         <img src="assets/pubs/icccn.png" alt="Cloud Is Closer thumbnail" />
         <div class="pub-content">
           <h3 data-number="8">Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</h3>
@@ -702,7 +696,7 @@
         </div>
       </article>
 
-      <article class="pub" data-categories="workshop">
+      <article class="pub" id="pub-hotmobile" data-categories="workshop">
         <img src="assets/pubs/hotmobile.png" alt="HotMobile thumbnail" />
         <div class="pub-content">
           <h3 data-number="9">Towards a Performance-Driven Device-Edge-Cloud Relationship</h3>
@@ -714,7 +708,7 @@
         </div>
       </article>
 
-      <article class="pub">
+      <article class="pub" id="pub-milcom23">
         <img src="assets/pubs/milcom.png" alt="MILCOM thumbnail" />
         <div class="pub-content">
           <h3 data-number="10">Impact of Delays and Computation Placement on Sense-Act Application Performance in IoT</h3>
@@ -789,7 +783,7 @@
       "@type": "Organization",
       "name": "University of California, Los Angeles (UCLA)"
     },
-    "description": "Research scientist specializing in machine learning, distributed systems, and cyber-physical systems (CPS/IoT/AV). Focus on distributed inference, latency-accuracy trade-offs, and energy-aware pipelines.",
+    "description": "Ph.D. Candidate at UCLA building systems and infrastructure for deploying ML and foundation models across heterogeneous and distributed compute, with applications in autonomous and cyber-physical systems.",
     "url": "https://sharma-pragya.github.io",
     "sameAs": [
       "https://github.com/sharma-pragya",
